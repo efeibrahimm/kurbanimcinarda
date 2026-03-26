@@ -1,0 +1,427 @@
+.wizard {
+  padding: var(--space-20) 0;
+  background: var(--color-white);
+}
+
+.wizardInner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.wizardBadge {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-6);
+}
+
+.wizardBadgeInner {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-5);
+  background: linear-gradient(135deg, var(--color-accent), #d4956e);
+  color: var(--color-white);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.wizardTitle {
+  text-align: center;
+  font-size: var(--text-4xl);
+  font-weight: 900;
+  margin-bottom: var(--space-10);
+  color: var(--color-text);
+}
+
+/* Options */
+.optionsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-10);
+}
+
+.optionCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  background: var(--color-background-alt);
+  border: 2px solid transparent;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.optionCard:hover {
+  border-color: var(--color-border);
+  background: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.optionCardSelected {
+  border-color: var(--color-accent);
+  background: rgba(232, 95, 28, 0.04);
+  box-shadow: 0 0 0 4px rgba(232, 95, 28, 0.08);
+}
+
+.optionIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xl);
+  flex-shrink: 0;
+  background: rgba(23, 59, 41, 0.08);
+  color: var(--color-primary);
+}
+
+.optionCardSelected .optionIcon {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+.optionContent {
+  flex: 1;
+}
+
+.optionTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+
+.optionDesc {
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  font-weight: 500;
+  margin: 0;
+}
+
+.optionExtra {
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+/* Animal Selection Grid */
+.animalGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-10);
+}
+
+.animalCard {
+  background: var(--color-background-alt);
+  border: 2px solid transparent;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-align: center;
+  padding-bottom: var(--space-5);
+}
+
+.animalCard:hover {
+  border-color: var(--color-border);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.animalCardSelected {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(232, 95, 28, 0.1);
+}
+
+.animalImageWrap {
+  position: relative;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  background: var(--color-white);
+}
+
+.animalImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.animalCard:hover .animalImage {
+  transform: scale(1.05);
+}
+
+.popularBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--color-accent);
+  color: var(--color-white);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+
+.animalName {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-top: var(--space-4);
+}
+
+.animalCta {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: var(--space-2);
+}
+
+/* Progress */
+.progressArea {
+  margin-bottom: var(--space-10);
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+
+.progressLabel {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+
+.progressPercent {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.progressTrack {
+  width: 100%;
+  height: 6px;
+  background: var(--color-background);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent), #d4956e);
+  border-radius: var(--radius-full);
+  transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Navigation Buttons */
+.wizardNav {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+}
+
+/* Deals Section */
+.dealsArea {
+  margin-top: var(--space-12);
+}
+
+.dealsLabel {
+  text-align: center;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+  position: relative;
+}
+
+.dealsLabel::before,
+.dealsLabel::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.dealsLabel::before { left: 0; }
+.dealsLabel::after { right: 0; }
+
+.mainDeal {
+  background: linear-gradient(135deg, #1a2040, #2a3060, #1a2040);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6) var(--space-8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+  color: var(--color-white);
+}
+
+.mainDealLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.mainDealIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: rgba(232, 95, 28, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xl);
+}
+
+.mainDealTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.mainDealSub {
+  font-size: var(--text-sm);
+  opacity: 0.6;
+  margin: 0;
+}
+
+.mainDealRight {
+  text-align: right;
+}
+
+.mainDealPrice {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: 900;
+  color: var(--color-accent);
+}
+
+.mainDealUnit {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+}
+
+.subDeals {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.subDealCard {
+  position: relative;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.subDealBadge {
+  position: absolute;
+  top: -8px;
+  right: 12px;
+  background: #e74c3c;
+  color: white;
+  padding: 2px var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.subDealTop {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.subDealIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: rgba(23, 59, 41, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-lg);
+}
+
+.subDealTitle {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-base);
+  color: var(--color-text);
+}
+
+.subDealSub {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.subDealBottom {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: var(--space-2);
+}
+
+.subDealPriceLabel {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+
+.subDealPrice {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 900;
+  color: var(--color-text);
+}
+
+/* Step transition */
+.stepContent {
+  animation: fadeIn 0.35s ease forwards;
+}
+
+@media (max-width: 600px) {
+  .animalGrid { grid-template-columns: 1fr; }
+  .subDeals { grid-template-columns: 1fr; }
+  .mainDeal { flex-direction: column; text-align: center; gap: var(--space-4); }
+  .mainDealRight { text-align: center; }
+  .wizardTitle { font-size: var(--text-2xl); }
+}
