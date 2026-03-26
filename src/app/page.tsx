@@ -1,7 +1,8 @@
 import AnnouncementBar from "@/components/AnnouncementBar/AnnouncementBar";
 import Navbar from "@/components/Navbar/Navbar";
 import Hero from "@/components/Hero/Hero";
-import Features from "@/components/Features/Features";
+import ServicesBlocks from "@/components/ServicesBlocks/ServicesBlocks";
+import Facilities from "@/components/Facilities/Facilities";
 import Packages from "@/components/Packages/Packages";
 import SmartWizard from "@/components/SmartWizard/SmartWizard";
 import Footer from "@/components/Footer/Footer";
@@ -15,9 +16,10 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero />
-        <Features />
+        <ServicesBlocks />
         <Packages />
         <SmartWizard />
+        <Facilities />
         <FAQ />
       </main>
       <Footer />

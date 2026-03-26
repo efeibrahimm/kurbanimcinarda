@@ -1,0 +1,100 @@
+.section {
+  padding: var(--space-24) 0 var(--space-16);
+  background-color: var(--color-white);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-16);
+  padding: 0 var(--space-4);
+}
+
+.badge {
+  display: inline-block;
+  background-color: rgba(232, 95, 28, 0.1);
+  color: var(--color-accent);
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-4);
+}
+
+.title {
+  color: #1e2c5a;
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  margin-bottom: var(--space-4);
+  line-height: 1.2;
+}
+
+.subtitle {
+  color: var(--color-text-light);
+  font-size: var(--text-lg);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: var(--text-5xl);
+  }
+  
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .fullWidth {
+    grid-column: 1 / -1;
+  }
+}
+
+.card {
+  background-color: var(--color-background-alt);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary-light);
+}
+
+.cardTitle {
+  color: #1e2c5a;
+  font-size: var(--text-xl);
+  font-weight: 800;
+  margin-bottom: var(--space-4);
+}
+
+.cardText {
+  color: var(--color-text-light);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.cardText strong {
+  color: #1e2c5a;
+  font-weight: 700;
+}
+
+.cardText p {
+  margin-bottom: var(--space-4);
+}
+
+.cardText p:last-child {
+  margin-bottom: 0;
+}
