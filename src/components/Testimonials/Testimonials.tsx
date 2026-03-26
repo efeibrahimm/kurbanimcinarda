@@ -24,7 +24,7 @@ const reviews: Review[] = [
     id: 2,
     text: "Geçen yıl kurbanımızı buradan aldık. Eti gayet lezzetli çıkmıştı. Parçalama ve paketleme konusunda inanılmaz profesyoneller. Kapıdan girdiğiniz an itibariyle o güveni hissediyorsunuz. Herkese tavsiye ederim.",
     author: "A. Kaan",
-    location: "Ümraniye / İstanbul",
+    location: "Bağcılar / İstanbul",
     initial: "A"
   },
   {

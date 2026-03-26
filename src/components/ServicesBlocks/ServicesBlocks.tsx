@@ -21,7 +21,7 @@ export default function ServicesBlocks() {
             <h3 className={styles.cardTitle}>Profesyonel Kurban Kesim Süreci</h3>
             <div className={styles.cardText}>
               <p>
-                Ümraniye merkezli kurban kesim tesisimizde, <strong>büyükbaş kurbanlıklar Tarım ve Orman Bakanlığı</strong>'na bağlı resmi veteriner hekim kontrolünden geçtikten sonra, <strong>İslami usullere tam riayet</strong> edilerek kesim işlemi gerçekleştirilir. Kesim öncesi ehil kasaplarımız eşliğinde her hisse sahibi adına <strong>vekalet alınır</strong>, besmele çekilir ve hayvana eziyet edilmeden profesyonel ekip tarafından işlem tamamlanır.
+                Bağcılar merkezli kurban kesim tesisimizde, <strong>büyükbaş kurbanlıklar Tarım ve Orman Bakanlığı</strong>'na bağlı resmi veteriner hekim kontrolünden geçtikten sonra, <strong>İslami usullere tam riayet</strong> edilerek kesim işlemi gerçekleştirilir. Kesim öncesi ehil kasaplarımız eşliğinde her hisse sahibi adına <strong>vekalet alınır</strong>, besmele çekilir ve hayvana eziyet edilmeden profesyonel ekip tarafından işlem tamamlanır.
               </p>
               <p>
                 Kesim sonrası etler yetişmiş kasap ustalarımız tarafından <strong>hisselere pay edilir</strong>, yenmesi haram olan 7 kısım (bezeler, öd, sidik torbası vb.) özenle ayrılır ve <strong>hijyenik ortamda vakum paketleme</strong> yapılır. Her hisse sahibinin payı <strong>7 kefeli hassas terazi</strong> ile tartılarak eşit paylaşım sağlanır.
@@ -44,7 +44,7 @@ export default function ServicesBlocks() {
             <h3 className={styles.cardTitle}>Randevulu Teslimat</h3>
             <div className={styles.cardText}>
               <p>
-                Bayramın 1. günü, belirlenen saat dilimlerinde <strong>randevulu teslimat</strong> yapılır. <strong>Ümraniye, Çekmeköy, Ataşehir, Sancaktepe, Üsküdar, Kadıköy, Maltepe, Pendik, Kartal</strong> başta olmak üzere tüm İstanbul'a soğuk zincir korunarak ulaşım sağlanır.
+                Bayramın 1. günü, belirlenen saat dilimlerinde <strong>randevulu teslimat</strong> yapılır. <strong>Bağcılar, Esenler, Güngören, Bahçelievler, Zeytinburnu, Bakırköy, Fatih</strong> başta olmak üzere tüm İstanbul'a soğuk zincir korunarak ulaşım sağlanır.
               </p>
             </div>
           </div>
@@ -60,7 +60,7 @@ export default function ServicesBlocks() {
                 <strong>Hisseli kurban</strong> modelimizde bir büyükbaş, İslami kurallara uygun olarak en fazla 7 kişi arasında paylaştırılır. Her hisse sahibi için ayrı ayrı vekalet alınır ve kesim anında isim zikredilerek ibadet yerine getirilir. Tesiste bizzat kesim izlenebileceği gibi, <strong>4K canlı yayın</strong> üzerinden uzaktan takip de mümkündür.
               </p>
               <p>
-                <strong>Çekmeköy kurbanlık, Ataşehir kurbanlık, Sancaktepe kurban hissesi, Üsküdar kurban kesimi, Fatih kurbanlık, Başakşehir kurban hissesi, Esenyurt kurbanlık</strong> veya <strong>Bakırköy kurban kesimi</strong> arıyorsanız, Ümraniye'deki merkezi konumumuzdan tüm İstanbul'a hizmet vermekteyiz. Erken kayıt dönemimizde indirimli fiyatlardan yararlanmak için hemen WhatsApp hattımızdan bilgi alabilirsiniz.
+                <strong>Bağcılar kurbanlık, Esenler kurbanlık, Güngören kurban hissesi, Bahçelievler kurban kesimi, Zeytinburnu kurbanlık, Fatih kurban hissesi, Bakırköy kurbanlık</strong> veya <strong>Avcılar kurban kesimi</strong> arıyorsanız, Bağcılar'daki merkezi konumumuzdan tüm İstanbul'a hizmet vermekteyiz. Erken kayıt dönemimizde indirimli fiyatlardan yararlanmak için hemen WhatsApp hattımızdan bilgi alabilirsiniz.
               </p>
             </div>
           </div>

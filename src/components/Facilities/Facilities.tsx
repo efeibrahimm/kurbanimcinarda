@@ -14,7 +14,7 @@ export default function Facilities() {
           <span className={styles.badge}>SİZİ BEKLİYORUZ</span>
           <h2 className={styles.title}>İstanbul Kurban Kesim Tesislerimiz</h2>
           <p className={styles.subtitle}>
-            Sadece dijitalde değil, Ümraniye merkezli ofisimizde ve modern tesislerimizde her zaman yanınızdayız. Tüm İstanbul'a hizmet veriyoruz.
+            Sadece dijitalde değil, Bağcılar merkezli ofisimizde ve modern tesislerimizde her zaman yanınızdayız. Tüm İstanbul'a hizmet veriyoruz.
           </p>
         </div>
 
@@ -63,13 +63,13 @@ export default function Facilities() {
             <div className={styles.locText}>
               <span className={styles.locLabel}>AÇIK ADRES</span>
               <span className={styles.locAddress}>
-                Namık Kemal, Cengiz Topel Cd. No:88A, Ümraniye/İstanbul
+                Merkez Mahallesi Ebubekir caddesi no: 5 Bağcılar/İstanbul
               </span>
             </div>
           </div>
           
           <Link 
-            href="https://goo.gl/maps/placeholder-kurban-tesisi" 
+            href="https://maps.google.com/?q=Merkez+Mahallesi+Ebubekir+Caddesi+5" 
             target="_blank" 
             rel="noopener noreferrer"
             className={styles.navBtn}

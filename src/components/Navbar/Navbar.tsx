@@ -5,7 +5,6 @@ import Link from "next/link";
 import styles from "./Navbar.module.css";
 
 const navItems = [
-  { label: "Ana Sayfa", href: "/" },
   { label: "Hisse Fiyatları", href: "/hisse-fiyatlari" },
   { label: "Randevu Al", href: "/randevu-al" },
   { label: "Özel İşlem", href: "/ozel-islem" },
@@ -41,7 +40,6 @@ export default function Navbar() {
           />
           <span className={styles.logoText}>
             Çınar Kurban
-            <small>Çınar İstanbul</small>
           </span>
         </Link>
 

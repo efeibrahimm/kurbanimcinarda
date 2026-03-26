@@ -1,6 +1,7 @@
 import AnnouncementBar from "@/components/AnnouncementBar/AnnouncementBar";
 import Navbar from "@/components/Navbar/Navbar";
 import Hero from "@/components/Hero/Hero";
+import HeroSubBar from "@/components/HeroSubBar/HeroSubBar";
 import SmartWizard from "@/components/SmartWizard/SmartWizard";
 import Packages from "@/components/Packages/Packages";
 import Testimonials from "@/components/Testimonials/Testimonials";
@@ -13,10 +14,11 @@ import WhatsAppButton from "@/components/WhatsAppButton/WhatsAppButton";
 export default function HomePage() {
   return (
     <>
+      <AnnouncementBar />
       <Navbar />
       <main>
         <Hero />
-        <AnnouncementBar />
+        <HeroSubBar />
         <SmartWizard />
         <Packages />
         <Testimonials />
