@@ -237,7 +237,7 @@
 
 .listHeaderRow {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr auto;
   background: var(--color-primary);
   color: var(--color-white);
   padding: var(--space-4) var(--space-6);
@@ -256,11 +256,19 @@
 
 .listRow {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr auto;
   align-items: center;
   padding: var(--space-5) var(--space-6);
   border-bottom: 1px solid var(--color-border);
   transition: background var(--transition-fast);
+}
+.listRow > div:last-child {
+  display: flex;
+  justify-content: flex-end;
+}
+.listHeaderRow > div:last-child {
+  display: flex;
+  justify-content: flex-end;
 }
 .listRow:last-child {
   border-bottom: none;
@@ -392,10 +400,11 @@
   font-size: var(--text-xl);
   font-weight: 800;
   margin-bottom: var(--space-3);
+  color: var(--color-white); /* override glob default text */
 }
 .featCardDark p {
   font-size: var(--text-sm);
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.9); /* Lighter to contrast on dark green */
   line-height: 1.6;
   margin-bottom: var(--space-6);
 }
@@ -413,6 +422,7 @@
   gap: var(--space-3);
   font-size: var(--text-sm);
   font-weight: 600;
+  color: var(--color-white);
 }
 .checkCircle {
   color: #10b981; /* bright green icon */
