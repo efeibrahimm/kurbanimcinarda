@@ -4,7 +4,6 @@ import SmartWizard from "@/components/SmartWizard/SmartWizard";
 import Packages from "@/components/Packages/Packages";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import Facilities from "@/components/Facilities/Facilities";
-import ServicesBlocks from "@/components/ServicesBlocks/ServicesBlocks";
 import FAQ from "@/components/FAQ/FAQ";
 
 export default function HomePage() {
@@ -16,7 +15,6 @@ export default function HomePage() {
         <Packages />
         <Testimonials />
         <Facilities />
-        <ServicesBlocks />
         <FAQ />
     </main>
   );
