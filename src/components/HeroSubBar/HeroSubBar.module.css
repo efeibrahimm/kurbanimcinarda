@@ -27,12 +27,16 @@
   opacity: 0.8;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .heroSubBar {
     font-size: 13px;
     padding: var(--space-4);
     line-height: 1.5;
     flex-wrap: wrap;
+    flex-direction: column;
     gap: var(--space-2);
+  }
+  .dot {
+    display: none;
   }
 }

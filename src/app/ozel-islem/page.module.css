@@ -422,13 +422,18 @@
   border-color: rgba(255, 255, 255, 0.6);
 }
 
-@media (max-width: 900px) {
-  .heroTitle { font-size: var(--text-4xl); }
-  .nelerRow { grid-template-columns: 1fr; }
+@media (max-width: 768px) {
+  .heroSection { min-height: 70vh; }
+  .heroTitle { font-size: var(--text-3xl); }
+  .heroDesc { font-size: var(--text-base); }
+  .sectionTitle { font-size: var(--text-2xl); }
+  .nelerRow { grid-template-columns: 1fr; gap: var(--space-8); }
+  .nelerRight { grid-template-columns: 1fr; }
   .nedenGrid { grid-template-columns: 1fr; }
   .deliveryTop { grid-template-columns: 1fr; }
   .hisseGrid { grid-template-columns: 1fr; }
   .heroOverlapText { display: none; }
-  .ctaBtns { flex-direction: column; }
+  .ctaBanner h2 { font-size: var(--text-2xl); }
+  .ctaBtns { flex-direction: column; gap: var(--space-3); }
   .ctaBtns > a { width: 100%; justify-content: center; }
 }

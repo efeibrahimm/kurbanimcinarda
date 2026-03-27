@@ -123,13 +123,14 @@
 }
 
 .hamburgerOpen .hamburgerLine:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: translateY(7px) rotate(45deg);
 }
 .hamburgerOpen .hamburgerLine:nth-child(2) {
   opacity: 0;
+  transform: translateX(10px);
 }
 .hamburgerOpen .hamburgerLine:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Mobile Menu Overlay */
@@ -140,20 +141,23 @@
   left: 0;
   width: 100%;
   height: 100dvh;
-  background: rgba(23, 59, 41, 0.98); /* dark green to match navbar */
-  backdrop-filter: blur(20px);
+  background: var(--color-primary);
   z-index: 95;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-4);
   opacity: 0;
-  transition: opacity var(--transition-base);
+  transform: translateY(-20px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
 }
 
 .mobileMenuOpen {
   display: flex;
   opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
 }
 
 .mobileNavLink {

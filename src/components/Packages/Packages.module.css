@@ -308,6 +308,17 @@
 }
 
 /* Layout for Tablet and Desktop */
+@media (max-width: 768px) {
+  .title {
+    font-size: var(--text-3xl);
+    padding: 0 var(--space-4);
+  }
+  .cardsContainer {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+  }
+}
+
 @media (min-width: 1024px) {
   .cardsContainer {
     justify-content: center;
