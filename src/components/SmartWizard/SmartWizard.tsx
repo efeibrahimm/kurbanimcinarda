@@ -133,20 +133,6 @@ export default function SmartWizard() {
 
   return (
     <section className={styles.wizard} id="akilli-asistan">
-      {/* Thin Marquee Campaign Banner */}
-      <div className={styles.campaignBannerThin}>
-        <div className={styles.marqueeTrack}>
-          <div className={styles.marqueeItem}>
-            Erken kayıt avantajlarıyla <span className={styles.pillSmall}>14.000 ₺'ye kadar indirim</span> kazanmak için acele edin! Son tarih 5 Nisan!
-          </div>
-          <div className={styles.marqueeItem}>
-            Erken kayıt avantajlarıyla <span className={styles.pillSmall}>14.000 ₺'ye kadar indirim</span> kazanmak için acele edin! Son tarih 5 Nisan!
-          </div>
-          <div className={styles.marqueeItem}>
-            Erken kayıt avantajlarıyla <span className={styles.pillSmall}>14.000 ₺'ye kadar indirim</span> kazanmak için acele edin! Son tarih 5 Nisan!
-          </div>
-        </div>
-      </div>
 
       <div className={styles.wizardInner}>
         {/* Badge */}
