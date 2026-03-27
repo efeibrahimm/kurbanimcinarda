@@ -1,9 +1,11 @@
 .navbarScrolled {
-  background: rgba(14, 26, 64, 0.98); /* Deep brand blue/green */
-  backdrop-filter: blur(10px);
-  height: 70px; /* Slimmer on scroll */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  background: rgba(14, 26, 64, 0.95) !important; /* Deep brand blue/green on scroll */
+  backdrop-filter: blur(12px);
+  height: 64px; /* Integrated slim look */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed; /* Fix to top during scroll */
+  top: 0;
 }
 .navbar {
   position: absolute; /* Stay at the top of the page */
@@ -11,10 +13,11 @@
   left: 0;
   right: 0;
   z-index: 90;
-  background: transparent;
-  transition: all 0.4s ease;
+  background: rgba(14, 26, 64, 0.4); /* Subtle dark glass by default */
+  backdrop-filter: blur(8px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   height: var(--navbar-height);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 
