@@ -109,17 +109,6 @@ export default function Hero() {
                 </div>
                 Bilgi Al & Kayıt
               </a>
-              <a
-                href="https://onlineislem.tarimorman.gov.tr/tarim-cebimde/kupe-sorgula"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.btnEdevlet}
-              >
-                <div className={styles.edevletIcon}>
-                  <span>e</span>
-                </div>
-                e-Devlet Küpe Sorgula
-              </a>
             </div>
 
             {/* Pills - Always showing same over slides */}
