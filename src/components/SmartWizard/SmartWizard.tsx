@@ -137,8 +137,10 @@ export default function SmartWizard() {
       <div className={styles.wizardInner}>
         {/* Badge */}
         <div className={styles.wizardBadge}>
-          <span className={styles.wizardBadgeIcon}><Sparkles size={16} /></span>
-          <span className={styles.wizardBadgeInner}>AKILLI SEÇİM ASİSTANI</span>
+          <span className={styles.wizardBadgeInner}>
+            <Sparkles size={16} className={styles.wizardBadgeIcon} />
+            AKILLI SEÇİM ASİSTANI
+          </span>
         </div>
 
         {/* Title */}
