@@ -336,30 +336,47 @@
 
 /* 6. Bottom Call To Action */
 .ctaBanner {
-  background: linear-gradient(135deg, var(--color-primary), #11281b);
+  background: var(--color-text);
   border-radius: var(--radius-2xl);
-  padding: var(--space-16) var(--space-8);
+  padding: var(--space-20) var(--space-8);
   text-align: center;
   margin-top: var(--space-10);
   margin-bottom: var(--space-20);
-  box-shadow: 0 20px 50px rgba(23, 59, 41, 0.3);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
   color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaBanner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03) 0%, transparent 70%);
+  pointer-events: none;
 }
 .ctaBanner h2 {
   font-family: var(--font-heading);
   font-size: var(--text-4xl);
-  font-weight: 800;
+  font-weight: 900;
   margin-bottom: var(--space-6);
-  line-height: 1.3;
-  max-width: 800px;
+  line-height: 1.25;
+  max-width: 850px;
   margin-inline: auto;
+  color: #ffffff;
+  letter-spacing: -0.01em;
 }
+
 .ctaBanner p {
   font-size: var(--text-lg);
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: var(--space-10);
-  max-width: 600px;
+  max-width: 650px;
   margin-inline: auto;
+  font-weight: 500;
 }
 .ctaBtns {
   display: flex;
