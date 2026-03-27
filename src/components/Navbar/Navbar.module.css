@@ -33,9 +33,10 @@
 }
 
 .logoIcon {
-  height: 56px;
+  height: 65px;
   width: auto;
   object-fit: contain;
+  margin-left: -10px; /* Optional slight shift if PDF left-padding is big */
 }
 
 .logoText {

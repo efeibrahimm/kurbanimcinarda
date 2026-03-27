@@ -35,12 +35,9 @@ export default function Navbar() {
         <Link href="/" className={styles.logo}>
           <img
             src="/logo_white.png"
-            alt="Çınar İstanbul Logo"
+            alt="Çınar Kurban Logo"
             className={styles.logoIcon}
           />
-          <span className={styles.logoText}>
-            Çınar Kurban
-          </span>
         </Link>
 
         {/* Desktop Links */}
