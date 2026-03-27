@@ -1,23 +1,40 @@
+"use client";
+
 import styles from "./page.module.css";
-import { blogPosts } from "@/data/blogData";
-import { notFound } from "next/navigation";
+import { blogPosts, BlogPost } from "@/data/blogData";
+import { notFound, useParams } from "next/navigation";
 import Link from "next/link";
-import { MoveLeft, Calendar, User, Clock } from "lucide-react";
+import { MoveLeft, Calendar, User, Clock, Bookmark } from "lucide-react";
+import { useEffect, useState } from "react";
 
-interface Props {
-  params: Promise<{ slug: string }>;
-}
-
-export default async function BlogPostPage({ params }: Props) {
-  const { slug } = await params;
+export default function BlogPostPage() {
+  const { slug } = useParams();
   const post = blogPosts.find((p) => p.slug === slug);
+  const [scrollWidth, setScrollWidth] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollTop;
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollProgress = (totalScroll / windowHeight) * 100;
+      setScrollWidth(scrollProgress);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   if (!post) {
     notFound();
   }
 
+  // Filter 2 other posts randomly for related section
+  const relatedPosts = blogPosts.filter(p => p.slug !== slug).slice(0, 2);
+
   return (
     <article className={styles.articlePage}>
+      
+      {/* Scroll Progress Bar */}
+      <div className={styles.progressBar} style={{ width: `${scrollWidth}%` }}></div>
       
       {/* Article Hero */}
       <section className={styles.hero}>
@@ -41,15 +58,18 @@ export default async function BlogPostPage({ params }: Props) {
         <div className={styles.articleBody}>
           
           <Link href="/blog" className={styles.backBtn}>
-            <MoveLeft size={16} /> Tüm Yazılar
+            <MoveLeft size={16} /> Blog Ana Sayfası
           </Link>
 
-          <div style={{ display: 'flex', gap: '2rem', marginBottom: '2rem', fontSize: '0.85rem', color: '#64748b' }}>
+          <div style={{ display: 'flex', gap: '2rem', marginBottom: '2rem', fontSize: '0.85rem', color: '#64748b', alignItems: 'center' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
               <Calendar size={14} /> {post.date}
             </span>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
               <User size={14} /> {post.author}
+            </span>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+              <Clock size={14} /> {post.readTime}
             </span>
           </div>
 
@@ -64,15 +84,28 @@ export default async function BlogPostPage({ params }: Props) {
             ))}
           </div>
 
+          {/* Related Posts Section */}
+          <section className={styles.relatedSection}>
+            <h3 className={styles.relatedTitle}>Bunlar da İlginizi Çekebilir</h3>
+            <div className={styles.relatedGrid}>
+              {relatedPosts.map(rp => (
+                <Link key={rp.id} href={`/blog/${rp.slug}`} className={styles.relatedCard}>
+                  <img src={rp.image} alt={rp.title} className={styles.relatedImg} />
+                  <div className={styles.relatedContent}>
+                    <p style={{ color: 'var(--color-accent)', fontWeight: 800, fontSize: '10px', textTransform: 'uppercase', marginBottom: '4px' }}>
+                      {rp.category}
+                    </p>
+                    <h4>{rp.title}</h4>
+                    <p>{rp.date}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+
         </div>
       </div>
 
     </article>
   );
-}
-
-export async function generateStaticParams() {
-  return blogPosts.map((post) => ({
-    slug: post.slug,
-  }));
 }
