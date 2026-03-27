@@ -50,7 +50,7 @@
 }
 
 .contentWrapper h2 {
-  color: #1e2c5a;
+  color: var(--color-primary);
   font-size: var(--text-2xl);
   font-weight: 800;
   margin-top: var(--space-8);

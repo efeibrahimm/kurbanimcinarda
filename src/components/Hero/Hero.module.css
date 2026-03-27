@@ -151,7 +151,7 @@
 
 .btnOutlineWhite {
   background-color: var(--color-white);
-  color: #1e2c5a;
+  color: var(--color-primary);
   padding: var(--space-3) var(--space-6);
   border-radius: var(--radius-lg);
   font-weight: 800;

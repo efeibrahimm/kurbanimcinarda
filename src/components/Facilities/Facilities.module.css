@@ -20,7 +20,7 @@
 }
 
 .title {
-  color: #1e2c5a;
+  color: var(--color-primary);
   font-size: var(--text-4xl);
   font-weight: 800;
   margin-bottom: var(--space-4);
@@ -156,7 +156,7 @@
   flex-shrink: 0;
   border-radius: var(--radius-full);
   background-color: rgba(30, 44, 90, 0.08); /* Dark blue tinted */
-  color: #1e2c5a;
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -184,7 +184,7 @@
 }
 
 .navBtn {
-  background-color: #1e2c5a;
+  background-color: var(--color-primary);
   color: white;
   padding: var(--space-3) var(--space-6);
   border-radius: var(--radius-md);
@@ -206,7 +206,7 @@
 }
 
 .navBtn:hover {
-  background-color: #15224a;
+  background-color: var(--color-primary-hover);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(30, 44, 90, 0.3);
 }

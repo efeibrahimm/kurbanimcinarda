@@ -24,7 +24,7 @@
 }
 
 .title {
-  color: #1e2c5a;
+  color: var(--color-primary);
   font-size: var(--text-4xl);
   font-weight: 800;
   margin-bottom: var(--space-4);
@@ -52,7 +52,7 @@
   border-radius: 50%;
   border: 1px solid var(--color-border);
   background-color: var(--color-white);
-  color: #1e2c5a;
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,7 +129,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #1e2c5a;
+  color: var(--color-primary);
   font-weight: 700;
   font-size: var(--text-sm);
   flex-shrink: 0;
@@ -142,7 +142,7 @@
 
 .authorName {
   font-weight: 700;
-  color: #1e2c5a;
+  color: var(--color-primary);
   font-size: var(--text-sm);
   margin-bottom: 2px;
 }

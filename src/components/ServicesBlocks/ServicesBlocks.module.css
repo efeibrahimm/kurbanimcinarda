@@ -23,7 +23,7 @@
 }
 
 .title {
-  color: #1e2c5a;
+  color: var(--color-primary);
   font-size: var(--text-4xl);
   font-weight: 800;
   margin-bottom: var(--space-4);
@@ -74,7 +74,7 @@
 }
 
 .cardTitle {
-  color: #1e2c5a;
+  color: var(--color-primary);
   font-size: var(--text-xl);
   font-weight: 800;
   margin-bottom: var(--space-4);
@@ -87,7 +87,7 @@
 }
 
 .cardText strong {
-  color: #1e2c5a;
+  color: var(--color-primary);
   font-weight: 700;
 }
 
