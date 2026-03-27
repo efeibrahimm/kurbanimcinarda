@@ -19,7 +19,7 @@ export const blogPosts: BlogPost[] = [
     title: "Kurban Eti Nasıl Saklanır? Profesyonel Saklama ve Dinlendirme Rehberi",
     excerpt: "Kurban etinin lezzetini kaybetmemesi ve bozulmaması için kesim sonrası ilk 24 saat kritik öneme sahiptir. İşte profesyonel kasapların sırları...",
     category: "Bilgi Rehberi",
-    author: "Çınar Kurban",
+    author: "Anonim",
     date: "27 Mart 2026",
     readTime: "8 Dakika",
     tags: ["Et Saklama", "Kurban 2026", "Beslenme"],
@@ -33,7 +33,7 @@ export const blogPosts: BlogPost[] = [
       <blockquote>"Sıcak et asla buzluğa veya poşete girmemeli; aksi halde etin merkezi soğuyamaz ve 'yeşerme' dediğimiz bozulma başlar."</blockquote>
 
       <h2>2. Et Pişirmede Altın Kurallar</h2>
-      <p>Kurban eti kesildiği gün yenmemelidir. Eğer mutlaka tüketilecekse, etin içindeki sinir ve dokuların yumuşaması için düdüklü tencere veya uzun süreli kısık ateşli pişirme yöntemleri tercih edilmelidir. Dinlenmiş et ise hem daha çabuk pişer hem de vücut tarafından daha kolay sindirilir.</p>
+      <p>Kurban eti kesildiği gün yenmemelidir. Eğer mutlaka tüketilecekse, etin içindeki sinir and dokuların yumuşaması için düdüklü tencere veya uzun süreli kısık ateşli pişirme yöntemleri tercih edilmelidir. Dinlenmiş et ise hem daha çabuk pişer hem de vücut tarafından daha kolay sindirilir.</p>
       
       <h2>3. Paketleme ve Dondurma Teknikleri</h2>
       <ul>
@@ -51,7 +51,7 @@ export const blogPosts: BlogPost[] = [
     title: "Neden Tosun? Kurbanlıkta Maksimum Et Verimi ve Kalite Standartları",
     excerpt: "Kurban ibadetinde neden erkek büyükbaş (tosun) tercih edilmelidir? Et verimi, kemik yapısı ve karkas randımanı hakkında merak edilenler.",
     category: "Seçim Rehberi",
-    author: "Veteriner Hekim Selim Bey",
+    author: "Anonim",
     date: "26 Mart 2026",
     readTime: "7 Dakika",
     tags: ["Hayvan Seçimi", "Et Verimi", "Tosun"],
@@ -73,11 +73,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: "2",
-    slug: "kurbanlik-hayvan-secerken-dikkat-edilmesi-gerekenler",
+    slug: "kurbanlik-tosun-secerken-dikkat-edilmesi-gerekenler",
     title: "Kurbanlık Tosun Seçerken Nelere Dikkat Edilmelidir? (Kapak Atma Rehberi)",
     excerpt: "Dinen kurban vasfı taşıyan bir tosun nasıl anlaşılır? Kapak atma, kilo tayini ve sağlık göstergeleri hakkında detaylı rehber.",
     category: "Seçim Rehberi",
-    author: "Çınar Kurban",
+    author: "Anonim",
     date: "25 Mart 2026",
     readTime: "6 Dakika",
     tags: ["Kurban Seçimi", "Tosun Rehberi", "Vekalet"],
@@ -99,36 +99,12 @@ export const blogPosts: BlogPost[] = [
     `
   },
   {
-    id: "5",
-    slug: "vekalet-kurbanin-ruhu-whatsapp-ve-dijital-vekalet",
-    title: "Vekalet: Kurban İbadetinin Ruhu. WhatsApp Üzerinden Vekalet Geçerli mi?",
-    excerpt: "Dijital çağda vekalet süreci nasıl işler? Diyanet İşleri Başkanlığı'nın bu konudaki görüşü ve bizim uygulama prensiplerimiz.",
-    category: "Fıkhi Bilgiler",
-    author: "Hoca Efendi",
-    date: "24 Mart 2026",
-    readTime: "5 Dakika",
-    tags: ["Vekalet", "Dijital Kurban", "Fıkıh"],
-    image: "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=2070&auto=format&fit=crop",
-    content: `
-      <p>Kurban, bir 'vekalet' ibadetidir. Yani kişi kendi kurbanını kesemiyorsa, bunu bir başkasına veya kuruma kestirebilir. Peki ama fiziki olmayan bu süreç dini olarak nasıl tamamlanır?</p>
-
-      <h2>WhatsApp veya Telefonla Vekalet Olur mu?</h2>
-      <p>Evet, vekalet için asıl olan 'beyan' ve 'niyet'tir. Kişinin niyetini açıkça belirtmesi, vekil olan kişiye bunu iletmesi (sözlü, yazılı, SMS veya görüntülü görüşme) ve vekilin de bunu kabul etmesi yeterlidir. Önemli olan tarafların birbirini tanıması veya güven tesis edilmesidir.</p>
-
-      <h2>Vekalet Sözü Nasıl Söylenmeli?</h2>
-      <p>En uygun vekalet verme şekli şöyledir: <strong>'2026 kurbanımı kesmeye, kestirmeye ve etini hisse sahiplerine veya ihtiyaç sahiplerine dağıtmaya seni (veya kurumunu) genel vekil tayin ettim.'</strong> Bu sözden sonra vekilin 'Kabul ettim, Allah kabul etsin' demesiyle süreç fıkhen tamamlanır.</p>
-
-      <h2>Bizim Sürecimiz</h2>
-      <p>Çınar Kurban olarak biz, her hissedarımıza özel vekalet onay sistemi kullanıyoruz. Kesim anında isminizi zikrederek tekbir getiriyor ve bu süreci şeffaf şekilde kayıt altına alıyoruz. Gönül rahatlığıyla ibadetinizi temsil ediyoruz.</p>
-    `
-  },
-  {
     id: "3",
     slug: "hisseli-kurban-kesimi-avantajlari",
     title: "Neden Hisseli Kurban? İstanbul Şehir Hayatında Devrim Yaratan Kolaylık",
     excerpt: "İstanbul gibi metropollerde kurban ibadetini yerine getirmenin en kolay yolu hisseli kurban organizasyonlarıdır. Neden mi?",
     category: "Şehir & Yaşam",
-    author: "Çınar Kurban",
+    author: "Anonim",
     date: "22 Mart 2026",
     readTime: "6 Dakika",
     tags: ["Hisse", "İstanbul", "Kolaylık"],
