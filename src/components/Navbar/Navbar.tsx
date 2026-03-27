@@ -34,7 +34,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className={styles.logo}>
           <img
-            src="/logo.png"
+            src="/logo_white.png"
             alt="Çınar İstanbul Logo"
             className={styles.logoIcon}
           />
