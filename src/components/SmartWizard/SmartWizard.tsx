@@ -136,7 +136,8 @@ export default function SmartWizard() {
       <div className={styles.wizardInner}>
         {/* Badge */}
         <div className={styles.wizardBadge}>
-          <span className={styles.wizardBadgeInner}>✨ AKILLI SEÇİM ASİSTANI</span>
+          <span className={styles.wizardBadgeIcon}>✦</span>
+          <span className={styles.wizardBadgeInner}>AKILLI SEÇİM ASİSTANI</span>
         </div>
 
         {/* Title */}
@@ -220,13 +221,18 @@ export default function SmartWizard() {
 
         {/* Deals */}
         <div className={styles.dealsArea}>
-          <div className={styles.dealsLabel}>2026 ERKEN KAYIT FIRSATLARI</div>
-          <div className={styles.mainDeal}>
+          <div className={styles.dealsLabelWrapper}>
+            <div className={styles.dealsLine} />
+            <div className={styles.dealsLabel}>2026 ERKEN KAYIT FIRSATLARI</div>
+            <div className={styles.dealsLine} />
+          </div>
+
+          <div className={styles.mainDealCard}>
             <div className={styles.mainDealLeft}>
               <div className={styles.mainDealIcon}>
-                <Gift size={28} className={styles.mainDealSVG} />
+                <Gift size={24} />
               </div>
-              <div>
+              <div className={styles.mainDealInfo}>
                 <div className={styles.mainDealTitle}>Erken Kayıt Fırsatı</div>
                 <p className={styles.mainDealSub}>Bütün müşterilerimize özel</p>
               </div>
@@ -236,37 +242,39 @@ export default function SmartWizard() {
               <div className={styles.mainDealUnit}>HİSSE BAŞI İNDİRİM</div>
             </div>
           </div>
-          <div className={styles.subDeals}>
+
+          <div className={styles.subDealsGrid}>
             <div className={styles.subDealCard}>
-              <span className={styles.subDealBadge}>EK FIRSAT</span>
-              <div className={styles.subDealTop}>
-                <div className={styles.subDealIcon}>
-                  <UserPlus size={24} className={styles.subDealSVG} />
+              <div className={styles.subDealBadge}>EK FIRSAT</div>
+              <div className={styles.subDealContent}>
+                <div className={styles.subDealLeft}>
+                  <div className={styles.subDealIcon}><UserPlus size={20} /></div>
+                  <div className={styles.subDealInfo}>
+                    <div className={styles.subDealTitle}>İlk Kayıt Avantajı</div>
+                    <p className={styles.subDealSub}>Yeni müşterilerimize özel</p>
+                  </div>
                 </div>
-                <div>
-                  <div className={styles.subDealTitle}>İlk Kayıt Avantajı</div>
-                  <p className={styles.subDealSub}>Yeni müşterilerimize özel</p>
+                <div className={styles.subDealRight}>
+                  <div className={styles.subDealUnit}>HİSSE BAŞI</div>
+                  <div className={styles.subDealPrice}>500 ₺</div>
                 </div>
-              </div>
-              <div className={styles.subDealBottom}>
-                <span className={styles.subDealPriceLabel}>HİSSE BAŞI</span>
-                <span className={styles.subDealPrice}>500 ₺</span>
               </div>
             </div>
+
             <div className={styles.subDealCard}>
-              <span className={styles.subDealBadge}>EK FIRSAT</span>
-              <div className={styles.subDealTop}>
-                <div className={styles.subDealIcon}>
-                  <Users size={24} className={styles.subDealSVG} />
+              <div className={styles.subDealBadge}>EK FIRSAT</div>
+              <div className={styles.subDealContent}>
+                <div className={styles.subDealLeft}>
+                  <div className={styles.subDealIcon}><Users size={20} /></div>
+                  <div className={styles.subDealInfo}>
+                    <div className={styles.subDealTitle}>Grup Bereketi</div>
+                    <p className={styles.subDealSub}>7 Hissedar beraber kayıt</p>
+                  </div>
                 </div>
-                <div>
-                  <div className={styles.subDealTitle}>Grup Bereketi</div>
-                  <p className={styles.subDealSub}>7 Hissedar beraber kayıt</p>
+                <div className={styles.subDealRight}>
+                  <div className={styles.subDealUnit}>HİSSE BAŞI</div>
+                  <div className={styles.subDealPrice}>500 ₺</div>
                 </div>
-              </div>
-              <div className={styles.subDealBottom}>
-                <span className={styles.subDealPriceLabel}>HİSSE BAŞI</span>
-                <span className={styles.subDealPrice}>500 ₺</span>
               </div>
             </div>
           </div>

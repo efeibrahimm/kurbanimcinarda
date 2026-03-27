@@ -156,16 +156,17 @@
 }
 
 .btnWhatsapp {
-  background-color: #25d366;
+  background-color: #00d26a; /* Bright neon green like reference */
   color: white;
   padding: var(--space-3) var(--space-6);
   border-radius: var(--radius-lg);
-  font-weight: 700;
+  font-weight: 800;
   display: flex;
   align-items: center;
   gap: var(--space-2);
   text-decoration: none;
   transition: all var(--transition-base);
+  box-shadow: 0 4px 15px rgba(0, 210, 106, 0.3);
 }
 
 .btnWhatsapp:hover {
@@ -174,7 +175,7 @@
   box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
 }
 
-.btnOutlineWhite {
+.btnEdevlet {
   background-color: var(--color-white);
   color: var(--color-primary);
   padding: var(--space-3) var(--space-6);
@@ -185,19 +186,58 @@
   gap: var(--space-2);
   text-decoration: none;
   transition: all var(--transition-base);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.btnOutlineWhite:hover {
+.btnEdevlet:hover {
   background-color: #f8fafc;
   transform: translateY(-2px);
   box-shadow: 0 4px 14px rgba(255, 255, 255, 0.2);
 }
 
+.whatsappIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edevletIcon {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 1.5px solid #e11d48;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.edevletIcon span {
+  color: #e11d48;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1;
+  font-family: serif; /* More like official e-devlet 'e' */
+}
+
+.pillsContainer {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: var(--space-4);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.pillsContainer::-webkit-scrollbar {
+  display: none;
+}
+
 .pillsGrid {
   display: flex;
-  flex-wrap: wrap;
   gap: var(--space-3);
-  max-width: 700px;
+  width: max-content;
+  padding: var(--space-1) 0;
 }
 
 @media (max-width: 768px) {
@@ -206,51 +246,44 @@
   }
 }
 
-@media (max-width: 640px) {
-  .pillsGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 .pillItem {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  background: rgba(14, 26, 64, 0.6);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: var(--space-3) var(--space-4);
-  border-radius: var(--radius-md);
-  color: var(--color-white);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-lg);
+  color: var(--color-primary);
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: background var(--transition-base);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all var(--transition-base);
+}
+
+.pillIcon {
+  display: flex;
+  align-items: center;
+  color: #e85f1c; /* Orange icon from reference */
 }
 
 @media (max-width: 900px) {
   .pillItem {
-    padding: var(--space-2) var(--space-3);
-    font-size: 9px;
-    letter-spacing: 0.02em;
-    gap: var(--space-1);
-    background: rgba(14, 26, 64, 0.8);
-  }
-  .pillItem svg {
-    width: 12px;
-    height: 12px;
+    padding: var(--space-2) var(--space-4);
+    font-size: 10px;
   }
 }
 
 .pillItem:hover {
-  background: rgba(14, 26, 64, 0.8);
-  border-color: rgba(232, 95, 28, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .pillItem svg {
-  color: var(--color-accent);
+  color: #e85f1c;
 }
 
 /* Dots Controls */
