@@ -139,7 +139,6 @@ export default function Hero() {
           />
         ))}
       </div>
-      </div>
 
       {/* Mobile-Only Campaign Marquee merged with Hero */}
       <div className={styles.campaignMarquee}>
