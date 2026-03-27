@@ -76,6 +76,13 @@ export default function SmartWizard() {
   const isLastStep = currentStep === totalSteps - 1;
 
   const handleSelect = (optionIndex: number) => {
+    // If it's the first step (animal selection) and "Küçükbaş" is selected (index 1)
+    if (currentStep === 0 && optionIndex === 1) {
+      const msg = "Merhaba, Web sitenizden ulaşıyorum. küçükbaş kurbanlıklar hakkında bilgi almak istiyorum.";
+      window.open(`https://wa.me/902129099495?text=${encodeURIComponent(msg)}`, "_blank");
+      return;
+    }
+
     const newSelections = { ...selections, [currentStep]: optionIndex };
     setSelections(newSelections);
 
