@@ -19,39 +19,15 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  padding: var(--space-4) var(--space-8);
-  background: var(--color-primary);
-  color: #fff;
+  padding: var(--space-2) var(--space-6);
+  background: rgba(23, 59, 41, 0.05);
+  color: var(--color-primary);
   border-radius: var(--radius-full);
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  box-shadow: 0 10px 30px rgba(23, 59, 41, 0.12);
-  position: relative;
-  overflow: hidden;
-}
-
-.wizardBadgeInner::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  animation: shine 3s infinite;
-}
-
-@keyframes shine {
-  0% { left: -100%; }
-  20% { left: 100%; }
-  100% { left: 100%; }
+  border: 1px solid rgba(23, 59, 41, 0.1);
 }
 
 .wizardTitle {
@@ -75,34 +51,43 @@
   align-items: center;
   gap: var(--space-4);
   padding: var(--space-5) var(--space-6);
-  background: var(--color-background-alt);
-  border: 2px solid transparent;
-  border-radius: var(--radius-lg);
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 20px;
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: all 0.3s ease;
+  min-width: 260px; /* For mobile scroll */
 }
 
 .optionCard:hover {
-  border-color: var(--color-border);
-  background: var(--color-white);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  background: #f8fafc;
+  border-color: rgba(23, 59, 41, 0.1);
 }
 
 .optionCardSelected {
   border-color: var(--color-primary);
-  background: rgba(23, 59, 41, 0.03);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  border-width: 2px;
+  background: rgba(23, 59, 41, 0.02);
   transform: scale(0.98);
 }
 
 .selectionCheck {
-  display: none;
-  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: white;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .optionCardSelected .selectionCheck {
-  display: block;
+  opacity: 1;
+  transform: scale(1);
 }
 
 .optionIcon {
@@ -147,17 +132,21 @@
     padding: var(--space-4) var(--space-4);
     gap: var(--space-3);
   }
+
   .optionIcon {
     width: 40px;
     height: 40px;
     font-size: var(--text-lg);
   }
+
   .optionTitle {
     font-size: var(--text-base);
   }
+
   .optionDesc {
     font-size: 12px;
   }
+
   .optionExtra {
     font-size: 10px;
     padding: 2px 8px;
@@ -174,32 +163,25 @@
 
 .animalCard {
   background: var(--color-white);
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 40px;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   text-align: center;
   padding: var(--space-4) var(--space-4) var(--space-8);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
 }
 
 .animalCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
   border-color: rgba(23, 59, 41, 0.1);
 }
 
 .animalCardSelected {
-  border-color: var(--color-primary);
-  border-width: 2px;
-  background: rgba(23, 59, 41, 0.02);
-  transform: scale(0.98);
-}
-
-.animalCardSelected .animalImageWrap {
-  background: #fff;
-  border: 1px solid rgba(23, 59, 41, 0.1);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(232, 95, 28, 0.1);
 }
 
 .animalImageWrap {
@@ -228,16 +210,14 @@
 
 .popularBadge {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 12px;
+  right: 12px;
   background: var(--color-accent);
   color: var(--color-white);
-  padding: 4px 12px;
-  border-radius: 12px;
-  font-size: 10px;
-  font-weight: 800;
-  z-index: 2;
-  box-shadow: 0 4px 12px rgba(232, 95, 28, 0.3);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 700;
 }
 
 .animalName {
@@ -305,92 +285,84 @@
   justify-content: center;
 }
 
-/* Deals Section */
-.dealsArea {
-  margin-top: var(--space-12);
-}
-
-.dealsLabel {
-  text-align: center;
-  font-size: var(--text-xs);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-6);
-  position: relative;
-}
-
-.dealsLabel::before,
-.dealsLabel::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 30%;
-}
-
-.wizardBadgeIcon {
-  color: #f97316;
-  font-size: 16px;
-}
-
-.wizardBadgeInner {
-  font-family: var(--font-heading);
-  font-size: 12px;
-  font-weight: 800;
-  color: #9a3412;
-  letter-spacing: 0.05em;
-}
-
-/* Campaign Banner at the Top */
-.campaignBanner {
-  background: #f97316;
-  padding: var(--space-8) var(--space-6);
-  margin-bottom: var(--space-12);
-  text-align: center;
-  color: white;
-  position: relative;
-}
-
-.bannerContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-4);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.bannerDots {
-  width: 8px;
-  height: 8px;
-  background: white;
-  border-radius: 50%;
-  opacity: 0.8;
-}
-
-.bannerText {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.6;
-  margin: 0;
-}
-
-.highlight {
-  background: white;
-  color: #f97316;
-  padding: 2px 10px;
-  border-radius: 20px;
-  font-weight: 800;
-  margin: 0 2px;
+/* Campaign Slider */
+.campaignSlider {
+  width: 100%;
+  overflow-x: auto;
   white-space: nowrap;
-  display: inline-block;
+  padding: 0 var(--space-6) var(--space-10);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  margin-bottom: var(--space-4);
+}
+
+.campaignSlider::-webkit-scrollbar {
+  display: none;
+}
+
+.campaignTrack {
+  display: inline-flex;
+  gap: var(--space-4);
+}
+
+.campaignCard {
+  background: linear-gradient(135deg, #fff 0%, #fff7ed 100%);
+  border: 1px solid rgba(249, 115, 22, 0.1);
+  padding: var(--space-5) var(--space-6);
+  border-radius: 24px;
+  min-width: 220px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.campBadge {
+  font-size: 9px;
+  font-weight: 800;
+  color: #f97316;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-1);
+}
+
+.campTitle {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: 2px;
+}
+
+.campDesc {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin: 0;
+  white-space: normal;
 }
 
 @media (max-width: 900px) {
-  .bannerText {
-    font-size: 14px;
+  .optionsScrollContainer {
+    width: calc(100% + var(--space-12));
+    margin-left: calc(-1 * var(--space-6));
+    margin-right: calc(-1 * var(--space-6));
+    overflow-x: auto;
+    padding: 0 var(--space-6) var(--space-8);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
+  .optionsScrollContainer::-webkit-scrollbar {
+    display: none;
+  }
+  .optionsList {
+    display: inline-flex;
+    flex-direction: row;
+    gap: var(--space-3);
+  }
+}
+
+.wizardTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: var(--space-10);
+  text-align: center;
 }
 
 /* Deals Area */
@@ -422,7 +394,8 @@
 
 .mainDealCard {
   background: var(--color-primary);
-  border-radius: 40px; /* Large radius like reference */
+  border-radius: 40px;
+  /* Large radius like reference */
   padding: var(--space-8);
   display: flex;
   align-items: center;
@@ -496,6 +469,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
   transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .subDealCard:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(23, 59, 41, 0.08);
@@ -579,44 +553,53 @@
 }
 
 @media (max-width: 768px) {
-  .animalGrid { 
-    grid-template-columns: 1fr 1fr; 
+  .animalGrid {
+    grid-template-columns: 1fr 1fr;
     gap: var(--space-3);
   }
+
   .animalCard {
     padding: var(--space-3) var(--space-3) var(--space-6);
     border-radius: 24px;
   }
+
   .animalName {
     font-size: 16px;
   }
+
   .animalCta {
     font-size: 9px;
   }
-  
-  .subDealsGrid { 
-    grid-template-columns: 1fr; 
+
+  .subDealsGrid {
+    grid-template-columns: 1fr;
   }
-  .mainDealCard { 
-    flex-direction: column; 
-    text-align: center; 
-    gap: var(--space-6); 
-    padding: var(--space-6); 
+
+  .mainDealCard {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-6);
+    padding: var(--space-6);
   }
-  .mainDealLeft { 
-    flex-direction: column; 
-    text-align: center; 
+
+  .mainDealLeft {
+    flex-direction: column;
+    text-align: center;
   }
-  .mainDealRight { 
-    text-align: center; 
+
+  .mainDealRight {
+    text-align: center;
   }
-  .wizardTitle { 
-    font-size: var(--text-2xl); 
+
+  .wizardTitle {
+    font-size: var(--text-2xl);
   }
-  .wizardNav { 
-    flex-direction: column-reverse; 
+
+  .wizardNav {
+    flex-direction: column-reverse;
   }
-  .wizardNav button { 
-    width: 100%; 
+
+  .wizardNav button {
+    width: 100%;
   }
 }

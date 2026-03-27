@@ -133,21 +133,30 @@ export default function SmartWizard() {
 
   return (
     <section className={styles.wizard} id="akilli-asistan">
-      {/* Top Campaign Banner */}
-      <div className={styles.campaignBanner}>
-        <div className={styles.bannerContent}>
-          <div className={styles.bannerDots} />
-          <p className={styles.bannerText}>
-            Erken kayıt avantajlarıyla <span className={styles.highlight}>14.000 ₺'ye kadar indirim</span> kazanmak için <span className={styles.highlight}>acele edin!</span> Son tarih 5 Nisan!
-          </p>
-          <div className={styles.bannerDots} />
+      {/* Top Campaign Slider (Swipeable) */}
+      <div className={styles.campaignSlider}>
+        <div className={styles.campaignTrack}>
+          <div className={styles.campaignCard}>
+            <div className={styles.campBadge}>ERKEN KAYIT</div>
+            <div className={styles.campTitle}>1.000 ₺ İNDİRİM</div>
+            <p className={styles.campDesc}>Tüm hisse kayıtlarında geçerli</p>
+          </div>
+          <div className={styles.campaignCard}>
+            <div className={styles.campBadge}>7 KİŞİ+</div>
+            <div className={styles.campTitle}>+500 ₺ GRUP EKİ</div>
+            <p className={styles.campDesc}>7 kişilik gruplara özel ek avantaj</p>
+          </div>
+          <div className={styles.campaignCard}>
+            <div className={styles.campBadge}>İLK KAYIT</div>
+            <div className={styles.campTitle}>%5 EK AVANTAJ</div>
+            <p className={styles.campDesc}>Yeni üyelerimize özel bereketi bol fırsat</p>
+          </div>
         </div>
       </div>
 
       <div className={styles.wizardInner}>
         {/* Badge */}
         <div className={styles.wizardBadge}>
-          <span className={styles.wizardBadgeIcon}>✦</span>
           <span className={styles.wizardBadgeInner}>AKILLI SEÇİM ASİSTANI</span>
         </div>
 
@@ -182,26 +191,28 @@ export default function SmartWizard() {
             </div>
           ) : (
             /* Generic options */
-            <div className={styles.optionsList}>
-              {steps[currentStep].options.map((opt, i) => (
-                <div
-                  key={i}
-                  className={`${styles.optionCard} ${selections[currentStep] === i ? styles.optionCardSelected : ""}`}
-                  onClick={() => handleSelect(i)}
-                >
-                  <div className={styles.optionIcon}>{opt.icon}</div>
-                  <div className={styles.optionContent}>
-                    <div className={styles.optionTitle}>{opt.title}</div>
-                    <p className={styles.optionDesc}>{opt.desc}</p>
+            <div className={styles.optionsScrollContainer}>
+              <div className={styles.optionsList}>
+                {steps[currentStep].options.map((opt, i) => (
+                  <div
+                    key={i}
+                    className={`${styles.optionCard} ${selections[currentStep] === i ? styles.optionCardSelected : ""}`}
+                    onClick={() => handleSelect(i)}
+                  >
+                    <div className={styles.optionIcon}>{opt.icon}</div>
+                    <div className={styles.optionContent}>
+                      <div className={styles.optionTitle}>{opt.title}</div>
+                      <p className={styles.optionDesc}>{opt.desc}</p>
+                    </div>
+                    {opt.extra && <span className={styles.optionExtra}>{opt.extra}</span>}
+                    <div className={styles.selectionCheck}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </div>
                   </div>
-                  {opt.extra && <span className={styles.optionExtra}>{opt.extra}</span>}
-                  <div className={styles.selectionCheck}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           )}
         </div>
@@ -235,7 +246,66 @@ export default function SmartWizard() {
           )}
         </div>
 
-        {/* Removed bottom deals to show only Top Banner as per request */}
+        {/* Deals */}
+        <div className={styles.dealsArea}>
+          <div className={styles.dealsLabelWrapper}>
+            <div className={styles.dealsLine} />
+            <div className={styles.dealsLabel}>2026 ERKEN KAYIT FIRSATLARI</div>
+            <div className={styles.dealsLine} />
+          </div>
+
+          <div className={styles.mainDealCard}>
+            <div className={styles.mainDealLeft}>
+              <div className={styles.mainDealIcon}>
+                <Gift size={24} />
+              </div>
+              <div className={styles.mainDealInfo}>
+                <div className={styles.mainDealTitle}>Erken Kayıt Fırsatı</div>
+                <p className={styles.mainDealSub}>Bütün müşterilerimize özel</p>
+              </div>
+            </div>
+            <div className={styles.mainDealRight}>
+              <div className={styles.mainDealPrice}>1.000 ₺</div>
+              <div className={styles.mainDealUnit}>HİSSE BAŞI İNDİRİM</div>
+            </div>
+          </div>
+
+          <div className={styles.subDealsGrid}>
+            <div className={styles.subDealCard}>
+              <div className={styles.subDealBadge}>EK FIRSAT</div>
+              <div className={styles.subDealContent}>
+                <div className={styles.subDealLeft}>
+                  <div className={styles.subDealIcon}><UserPlus size={20} /></div>
+                  <div className={styles.subDealInfo}>
+                    <div className={styles.subDealTitle}>İlk Kayıt Avantajı</div>
+                    <p className={styles.subDealSub}>Yeni müşterilerimize özel</p>
+                  </div>
+                </div>
+                <div className={styles.subDealRight}>
+                  <div className={styles.subDealUnit}>HİSSE BAŞI</div>
+                  <div className={styles.subDealPrice}>500 ₺</div>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.subDealCard}>
+              <div className={styles.subDealBadge}>EK FIRSAT</div>
+              <div className={styles.subDealContent}>
+                <div className={styles.subDealLeft}>
+                  <div className={styles.subDealIcon}><Users size={20} /></div>
+                  <div className={styles.subDealInfo}>
+                    <div className={styles.subDealTitle}>Grup Bereketi</div>
+                    <p className={styles.subDealSub}>7 Hissedar beraber kayıt</p>
+                  </div>
+                </div>
+                <div className={styles.subDealRight}>
+                  <div className={styles.subDealUnit}>HİSSE BAŞI</div>
+                  <div className={styles.subDealPrice}>500 ₺</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
