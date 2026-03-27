@@ -25,11 +25,10 @@ export default function Footer() {
           <div className={styles.footerBrand}>
             <div className={styles.footerLogo}>
               <img
-                src="/logo.png"
-                alt="Çınar Logo"
+                src="/logo_white.png"
+                alt="Çınar Kurban"
                 className={styles.footerLogoImg}
               />
-              <span className={styles.footerLogoText}>Çınar Kurban</span>
             </div>
             <p className={styles.footerDesc}>
               15 yıllık tecrübe ile İstanbul&apos;da İslami usullere uygun kurbanlık
