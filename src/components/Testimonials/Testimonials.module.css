@@ -1,7 +1,20 @@
 .section {
   padding: var(--space-20) 0;
-  background-color: var(--color-background-alt);
+  background: linear-gradient(135deg, #173b29 0%, #0d281a 100%);
+  position: relative;
   overflow: hidden;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+  opacity: 0.1;
+  pointer-events: none;
 }
 
 .header {
@@ -21,11 +34,11 @@
   font-size: var(--text-4xl);
   font-weight: 900;
   margin-bottom: var(--space-4);
-  color: var(--color-text);
+  color: var(--color-white);
 }
 
 .subtitle {
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.7);
   font-size: var(--text-lg);
   line-height: 1.6;
 }
@@ -39,14 +52,14 @@
   width: 48px;
   height: 48px;
   border-radius: var(--radius-full);
-  border: 1px solid var(--color-border);
-  background: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all var(--transition-base);
-  color: var(--color-text);
+  color: var(--color-white);
 }
 
 .controlBtn:hover:not(:disabled) {
@@ -82,8 +95,8 @@
   background: var(--color-white);
   padding: var(--space-8);
   border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--color-border);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
