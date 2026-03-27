@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styles from "./Testimonials.module.css";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -58,6 +58,41 @@ const reviews: Review[] = [
 ];
 
 export default function Testimonials() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setCanScrollLeft(scrollLeft > 10);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  useEffect(() => {
+    const ref = scrollRef.current;
+    if (ref) {
+      ref.addEventListener("scroll", checkScroll);
+      window.addEventListener("resize", checkScroll);
+      checkScroll();
+    }
+    return () => {
+      if (ref) ref.removeEventListener("scroll", checkScroll);
+      window.removeEventListener("resize", checkScroll);
+    };
+  }, []);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const scrollAmount = 400;
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
     <section className={styles.section} id="referanslarimiz">
       <div className="container">
@@ -72,16 +107,28 @@ export default function Testimonials() {
           </div>
           
           <div className={styles.controls}>
-            <button className={styles.controlBtn} aria-label="Önceki Yorumlar" disabled>
+            <button 
+              className={styles.controlBtn} 
+              aria-label="Önceki Yorumlar" 
+              onClick={() => scroll("left")}
+              disabled={!canScrollLeft}
+              style={{ opacity: canScrollLeft ? 1 : 0.3 }}
+            >
               <ChevronLeft size={20} />
             </button>
-            <button className={styles.controlBtn} aria-label="Sonraki Yorumlar">
+            <button 
+              className={styles.controlBtn} 
+              aria-label="Sonraki Yorumlar"
+              onClick={() => scroll("right")}
+              disabled={!canScrollRight}
+              style={{ opacity: canScrollRight ? 1 : 0.3 }}
+            >
               <ChevronRight size={20} />
             </button>
           </div>
         </div>
 
-        <div className={styles.cardsWrapper}>
+        <div className={styles.cardsWrapper} ref={scrollRef}>
           {reviews.map((rev) => (
             <div className={styles.card} key={rev.id}>
               <div className={styles.stars}>
