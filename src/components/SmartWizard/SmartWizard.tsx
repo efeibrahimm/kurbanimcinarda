@@ -57,12 +57,12 @@ const steps: Step[] = [
 const animals = [
   {
     name: "Büyükbaş",
-    image: "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=500&q=80",
+    image: "/wizard/buyukbas.png",
     popular: true,
   },
   {
     name: "Küçükbaş",
-    image: "https://images.unsplash.com/photo-1484557985045-edf25e08da73?w=500&q=80",
+    image: "/wizard/kucukbas.png",
     popular: false,
   },
 ];
