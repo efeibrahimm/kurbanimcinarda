@@ -32,14 +32,14 @@ export default function Facilities() {
           <div className={styles.sideImageRow}>
             <div className={`${styles.imageWrap} ${styles.sideImage}`}>
                <img 
-                 src="/banner_image/terazi.webp" 
+                 src="/banner_image/terazi.png" 
                  alt="Hassas Tartı" 
                />
                <div className={styles.imgBadge}>HASSAS TARTI</div>
             </div>
             <div className={`${styles.imageWrap} ${styles.sideImage}`}>
                <img 
-                 src="/banner_image/kesim.webp" 
+                 src="/banner_image/kesim.png" 
                  alt="Profesyonel Kesim" 
                />
                <div className={styles.imgBadge}>HİJYENİK KESİM</div>
