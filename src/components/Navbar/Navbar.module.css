@@ -191,4 +191,16 @@
   .hamburger {
     display: flex;
   }
+  .logoIcon {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoIcon {
+    height: 50px;
+  }
+  .mobileMenu {
+    gap: var(--space-6); /* Adjusted for better touch interaction */
+  }
 }
