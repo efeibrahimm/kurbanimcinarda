@@ -41,7 +41,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr">
-      <body>
+      <body suppressHydrationWarning>
         <AnnouncementBar />
         <Navbar />
         {children}
