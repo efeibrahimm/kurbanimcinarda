@@ -1,0 +1,201 @@
+.pageContainer {
+  padding: var(--space-20) 0 var(--space-24);
+  background-color: var(--color-background-alt);
+  color: var(--color-text);
+  min-height: calc(100vh - var(--navbar-height));
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--text-5xl);
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+  line-height: 1.2;
+}
+
+.titleAccent {
+  color: var(--color-accent);
+}
+
+.description {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Two-column Card Wrapper */
+.formWrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+  display: flex;
+  overflow: hidden;
+}
+
+/* Left Form Area */
+.formArea {
+  flex: 1.2;
+  padding: var(--space-10) var(--space-12);
+  display: flex;
+  flex-direction: column;
+}
+
+.formTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: var(--space-8);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.label {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.input, .select, .textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: #f8fafc; /* very light grey */
+  color: var(--color-text);
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  border-color: var(--color-text); /* Using footer blue for focus */
+  background-color: var(--color-white);
+  box-shadow: 0 0 0 3px rgba(29, 43, 54, 0.1);
+}
+
+.textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Captcha Dummy Box */
+.captchaBox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-text);
+  color: var(--color-white);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-6);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  align-self: flex-start;
+  user-select: none;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: var(--space-4);
+  background-color: var(--color-text); /* Mavi/Antrasit Footer Rengi */
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-lg);
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(29, 43, 54, 0.2);
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  background-color: #111a22; /* Daha koyu */
+  box-shadow: 0 6px 20px rgba(29, 43, 54, 0.3);
+}
+
+/* Right Info Area */
+.infoArea {
+  flex: 1;
+  background-color: var(--color-text); /* Mavi/Antrasit Footer Rengi */
+  color: var(--color-white);
+  padding: var(--space-10) var(--space-10);
+  display: flex;
+  flex-direction: column;
+}
+
+.infoTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--color-white);
+  margin-bottom: var(--space-10);
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.infoItem {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.infoIcon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent); /* Turuncu check vs */
+}
+
+.infoItemContent h4 {
+  font-size: var(--text-base);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+  color: var(--color-white);
+}
+
+.infoItemContent p {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .formWrapper {
+    flex-direction: column;
+  }
+  .formArea {
+    padding: var(--space-6);
+  }
+  .infoArea {
+    padding: var(--space-8) var(--space-6);
+  }
+}
