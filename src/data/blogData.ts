@@ -47,56 +47,55 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: "4",
-    slug: "dana-vs-duve-hangisi-daha-cok-et-verir",
-    title: "Dana mı, Düve mi? Kurbanlıkta Et Kalitesi ve Verim Karşılaştırması",
-    excerpt: "Erkek tosun ile dişi düve arasındaki et lezzeti, yağ oranı ve net et verimi farklarını inceliyoruz. Kurban seçiminde hangisi daha kârlı?",
+    slug: "tosun-kurbanlikta-yuksek-et-verimi",
+    title: "Neden Tosun? Kurbanlıkta Maksimum Et Verimi ve Kalite Standartları",
+    excerpt: "Kurban ibadetinde neden erkek büyükbaş (tosun) tercih edilmelidir? Et verimi, kemik yapısı ve karkas randımanı hakkında merak edilenler.",
     category: "Seçim Rehberi",
     author: "Veteriner Hekim Selim Bey",
     date: "26 Mart 2026",
     readTime: "7 Dakika",
-    tags: ["Hayvan Seçimi", "Et Verimi", "Kurbanlık"],
+    tags: ["Hayvan Seçimi", "Et Verimi", "Tosun"],
     image: "https://images.unsplash.com/photo-1596733430284-f7437764b1a9?q=80&w=2070&auto=format&fit=crop",
     content: `
-      <p>Kurban bayramı yaklaşırken her hissedarın aklındaki temel soru: 'Tosun mu alsak, düve mi?'. Her iki seçeneğin de kendine has avantajları ve dini gereklilikleri bulunmaktadır.</p>
+      <p>Kurban bayramı yaklaşırken hissedarlar için en kârlı ve dini hassasiyetlere uygun seçim <strong>Erkek Tosun</strong> tercihidir. Çınar Kurban olarak sadece rüştünü ispatlamış erkek tosunları bünyemizde barındırmamızın haklı sebepleri var.</p>
 
-      <h2>1. Erkek Dana (Tosun) Verimi</h2>
-      <p>Erkek büyükbaş hayvanlar (tosun), dişilere göre daha fazla kemik yapısı ve daha az yağ oranına sahiptir. Karkas et verimi açısından tosun her zaman daha üstündür. Kas yapısı daha gelişmiş olduğu için hissedar başına düşen 'kırmızı et' oranı tosunlarda daha yüksek çıkar.</p>
+      <h2>1. Maksimum Kırmızı Et Verimi</h2>
+      <p>Erkek büyükbaş hayvanlar (tosun), dişilere göre çok daha gelişmiş bir kas yapısına sahiptir. Karkas et verimi açısından tosun her zaman rakipsizdir. Kemik yapısı güçlü olsa da, net 'kırmızı et' miktarı hissedar başına düşen payda çok daha tatmin edici sonuçlar verir.</p>
 
-      <h2>2. Dişi Düve (İnek Olmamış) Lezzeti</h2>
-      <p>Düveler, hormon yapıları gereği etin içine daha fazla yağ (mermerleşme) yaparlar. Bu yağlanma, pişirme esnasında eriyerek ete olağanüstü bir lezzet ve yumuşaklık katar. Eğer önceliğiniz kilo değil de 'lokum gibi et' ise düve sizin için doğru tercih olabilir. Ancak dinen kurban edilecek dişi hayvanın damızlık vasfını yitirmemiş olması ve gebe olmaması şartına Çınar Kurban olarak çok dikkat ediyoruz.</p>
+      <h2>2. Düşük Yağ Oranı ve Sağlıklı Protein</h2>
+      <p>Tosun etleri, mermerleşme (yağ dağılımı) açısından daha dengelidir ve dişilere oranla daha az iç yağ bulundurur. Bu da daha sağlıklı ve kolesterol açısından daha dengeli bir kurban payı almanızı sağlar. Özellikle protein değerinin yüksekliği, tosun etini sporcular ve sağlıklı beslenenler için bir numara yapar.</p>
 
       <h2>3. Verim Karşılaştırması (Karkas Randımanı)</h2>
-      <p>Ortalama bir canlı kiloya sahip tosun %55-60 arası karkas randımanı verirken, düvelerde bu oran %50-55 bandında kalabilir. Yani 500 kiloluk bir tosundan alacağınız et miktarı, aynı kilodaki düveye göre 20-30 kilo daha fazla olabilir.</p>
+      <p>Ortalama bir canlı kiloya sahip kaliteli bir tosun %58-62 arası karkas randımanı verir. Bu yüksek randıman, verdiğiniz ücretin karşılığını tam olarak 'et' şeklinde almanız demektir. Biz tesisimizde, sadece belirli bir kilonun üzerindeki 'kapak atmış' elit tosunları kesime alarak bu verimi garanti altına alıyoruz.</p>
 
-      <p>Özetle; kalabalık aileler ve et miktarına önem verenler için <strong>Erkek Tosun</strong>, lezzet ve yumuşaklık arayan gurme damaklar için <strong>Dişi Düve</strong> öneriyoruz. Tesisimizde bu ayrımı size net şekilde yaparak şeffaf kilo garantisi sunuyoruz.</p>
+      <p>Kurban Bayramı'nda hüsrana uğramamak ve net et miktarında sürpriz yaşamamak için <strong>Erkek Büyükbaş (Tosun)</strong> her zaman en güvenli limandır.</p>
     `
   },
   {
     id: "2",
     slug: "kurbanlik-hayvan-secerken-dikkat-edilmesi-gerekenler",
-    title: "Kurbanlık Hayvan Seçerken Nelere Dikkat Edilmelidir? (Kapak Atma Rehberi)",
-    excerpt: "Dinen kurban vasfı taşıyan bir hayvan nasıl anlaşılır? Kapak atma, kilo tayini ve sağlık göstergeleri hakkında detaylı rehber.",
+    title: "Kurbanlık Tosun Seçerken Nelere Dikkat Edilmelidir? (Kapak Atma Rehberi)",
+    excerpt: "Dinen kurban vasfı taşıyan bir tosun nasıl anlaşılır? Kapak atma, kilo tayini ve sağlık göstergeleri hakkında detaylı rehber.",
     category: "Seçim Rehberi",
     author: "Çınar Kurban",
     date: "25 Mart 2026",
     readTime: "6 Dakika",
-    tags: ["Kurban Seçimi", "Hisse", "Vekalet"],
+    tags: ["Kurban Seçimi", "Tosun Rehberi", "Vekalet"],
     image: "https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?q=80&w=2000&auto=format&fit=crop",
     content: `
-      <p>Kurbanlık hayvan seçimi sadece bir alışveriş değil, bir ibadetin başlangıcıdır. Bu nedenle seçilen hayvanın hem İslami usullere hem de sağlık şartlarına uygun olması gerekir.</p>
+      <p>Kurbanlık seçimi sadece bir alışveriş değil, bir ibadetin başlangıcıdır. Bu nedenle seçilen tosunun hem İslami usullere hem de sağlık şartlarına uygun olması gerekir.</p>
 
       <h2>Kapak Atma (Dini Yaş Tayini)</h2>
-      <p>Büyükbaş hayvanlarda (sığır/manda) kurbanlık olabilme şartı 2 kameri yılı (24 ay) doldurmuş olmasıdır. Hayvanın kimliği bazen eksik olabilir, bu yüzden en sağlam kanıt 'kapak atma' denilen ön süt dişlerinin düşüp yerine kalıcı büyük dişlerin çıkmasıdır. Alt çenede iki büyük ön dişin görülmesi, hayvanın rüştünü ispat ettiğinin kanıtıdır.</p>
+      <p>Büyükbaş tosunlarda kurbanlık olabilme şartı 2 kameri yılı (24 ay) doldurmuş olmasıdır. Bunun en sağlam kanıtı 'kapak atma' denilen ön süt dişlerinin düşüp yerine kalıcı büyük dişlerin çıkmasıdır. Alt çenede iki büyük ön dişin görülmesi, tosunun rüştünü ispat ettiğinin ve kurbana uygun olduğunun kanıtıdır.</p>
 
       <h2>Sağlık Kontrolü (A'dan Z'ye)</h2>
       <ul>
         <li><strong>Bakışlar:</strong> Hayvan canlı ve diri bakmalı, tepkisel olmalıdır.</li>
         <li><strong>Burun:</strong> Burunu nemli olmalı ancak sürekli akan veya köpüren bir salya bulunmamalıdır.</li>
         <li><strong>Yürüme:</strong> Topallık, yara veya belirgin bir fiziksel sakatlık kurban ibadetine engel olabilir.</li>
-        <li><strong>Gebe Kontrolü:</strong> Dişi hayvanlarda veteriner ultrasonu ile gebelik testi yapılmalı, gebe hayvan asla kurban edilmemelidir.</li>
       </ul>
 
-      <p>Çınar Kurban olarak biz, yaylalardan özenle seçtiğimiz tosunları veteriner hekimimizce tek tek kontrol ediyor ve tartı fişleriyle beraber her hissedara hayvana dair tam şeffaflık sağlıyoruz.</p>
+      <p>Çınar Kurban olarak biz, Anadolu'nun yaylalarından özenle seçtiğimiz sadece erkek tosunları veteriner hekimimizce tek tek kontrol ediyor ve hissedarlarımıza tam şeffaflık sağlıyoruz.</p>
     `
   },
   {
