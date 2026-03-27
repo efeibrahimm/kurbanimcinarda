@@ -110,19 +110,19 @@
   margin-bottom: var(--space-4);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .heroTitle1 {
-    font-size: 26px;
+    font-size: 24px;
     line-height: 1.2;
   }
   .heroTitle2 {
-    font-size: 32px;
+    font-size: 28px;
     line-height: 1.1;
     margin-bottom: var(--space-6);
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .heroTitle1, .heroTitle2 {
     font-size: 64px;
   }
@@ -230,12 +230,13 @@
   transition: background var(--transition-base);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .pillItem {
-    padding: var(--space-2) var(--space-4);
+    padding: var(--space-2) var(--space-3);
     font-size: 9px;
     letter-spacing: 0.02em;
     gap: var(--space-1);
+    background: rgba(14, 26, 64, 0.8);
   }
   .pillItem svg {
     width: 12px;

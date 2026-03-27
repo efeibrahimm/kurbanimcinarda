@@ -186,7 +186,7 @@
     display: none;
   }
   .navCta {
-    display: none;
+    display: none !important;
   }
   .hamburger {
     display: flex;
