@@ -34,6 +34,20 @@ export const metadata: Metadata = {
   },
 };
 
+import { Inter, Outfit } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  display: "swap",
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -41,7 +55,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr">
-      <body suppressHydrationWarning>
+      <body className={`${inter.variable} ${outfit.variable}`} suppressHydrationWarning>
         <AnnouncementBar />
         <Navbar />
         {children}

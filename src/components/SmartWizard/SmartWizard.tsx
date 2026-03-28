@@ -1,15 +1,33 @@
 "use client";
 
 import { useState } from "react";
-import styles from "./SmartWizard.module.css";
-import { Gift, UserPlus, Users, Sparkles } from "lucide-react";
+import { 
+  Gift, 
+  UserPlus, 
+  Users, 
+  User, 
+  Users2, 
+  Wallet, 
+  Home, 
+  Heart, 
+  UsersRound, 
+  Package, 
+  Truck, 
+  Factory,
+  ArrowLeft,
+  CheckCircle2
+} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { VerticalCutReveal } from "@/components/ui/vertical-cut-reveal";
+import { cn } from "@/lib/utils";
 
 /* ---- Step data ---- */
 interface WizardOption {
-  icon: string;
+  icon: React.ReactNode;
   title: string;
   desc: string;
   extra?: string;
+  extraColor?: "orange" | "green" | "blue" | "default";
 }
 
 interface Step {
@@ -19,37 +37,83 @@ interface Step {
 
 const steps: Step[] = [
   {
-    question: "Kurbanınızı seçin",
+    question: "Kurban türünü seçin",
     options: [], // animal selection (special render)
   },
   {
     question: "Kayıt modeliniz hangisi?",
     options: [
-      { icon: "👤", title: "Hissedar olarak katılacağım", desc: "Bireysel hisse kaydı" },
-      { icon: "👥", title: "7 Kişilik grubumuz hazır", desc: "Grup olarak kayıt", extra: "ÖZEL SEÇİM" },
+      { 
+        icon: <User className="w-6 h-6 text-orange-500" />, 
+        title: "Hissedar olarak katılacağım", 
+        desc: "Bireysel hisse kaydı" 
+      },
+      { 
+        icon: <Users2 className="w-6 h-6 text-orange-500" />, 
+        title: "7 Kişilik grubumuz hazır", 
+        desc: "Grup olarak kayıt", 
+        extra: "ÖZEL SEÇİM",
+        extraColor: "orange"
+      },
     ],
   },
   {
     question: "Kemikli Et Verimi Beklentiniz",
     options: [
-      { icon: "💰", title: "Ekonomik Grup (25-30 kg)", desc: "1. Grup: Bütçe dostu ve ekonomik" },
-      { icon: "🏠", title: "Mini Aile Grubu (30-35 kg)", desc: "2. Grup: Küçük aileler için ideal" },
-      { icon: "🏆", title: "Çekirdek Aile Grubu (35-40 kg)", desc: "3. Grup: Çekirdek aileler için en ideal denge" },
-      { icon: "👨‍👩‍👧‍👦", title: "Geniş Aile Grubu (40+ kg)", desc: "4. Grup: Geniş aileler için bereketi bol" },
+      { 
+        icon: <Wallet className="w-6 h-6 text-gray-600" />, 
+        title: "Grup 01 (25-30 kg)", 
+        desc: "Bütçe dostu ve ekonomik" 
+      },
+      { 
+        icon: <Home className="w-6 h-6 text-gray-600" />, 
+        title: "Grup 02 (30-35 kg)", 
+        desc: "İdeal dengeli seçim" 
+      },
+      { 
+        icon: <Heart className="w-6 h-6 text-orange-500" />, 
+        title: "Grup 03 (35-40 kg)", 
+        desc: "Bereketli ve doyurucu",
+        extra: "POPÜLER",
+        extraColor: "orange"
+      },
+      { 
+        icon: <UsersRound className="w-6 h-6 text-gray-600" />, 
+        title: "Grup 04 (40+ kg)", 
+        desc: "Geniş aileler için bereketi bol" 
+      },
     ],
   },
   {
     question: "Kurban nasıl işlensin?",
     options: [
-      { icon: "🍖", title: "Geleneksel Paket", desc: "Bayram 1. günü, parçalanmış sıcak et teslimi" },
-      { icon: "🚚", title: "Özel Kasaplık İşlemi", desc: "Değerli et, kıyma, kuşbaşı olarak paketle, kurbandan sonra teslim", extra: "EK ÜCRETLİ" },
+      { 
+        icon: <Package className="w-6 h-6 text-gray-600" />, 
+        title: "Geleneksel Paket", 
+        desc: "Bayram 1. günü, parçalanmış sıcak et teslimi" 
+      },
+      { 
+        icon: <CheckCircle2 className="w-6 h-6 text-emerald-500" />, 
+        title: "Özel Kasaplık İşlemi", 
+        desc: "Kıyma, kuşbaşı, değerli et paketle (+5.güne özel)", 
+        extra: "+5.000 ₺",
+        extraColor: "green"
+      },
     ],
   },
   {
     question: "Teslimat tercihi?",
     options: [
-      { icon: "🚛", title: "Adresime Gelsin", desc: "Özel işlem sonrası dondurulmuş sevkiyat" },
-      { icon: "🏭", title: "Tesisten Alırım", desc: "Randevu saatinizde tesisten teslim" },
+      { 
+        icon: <Truck className="w-6 h-6 text-gray-600" />, 
+        title: "Adresime Gelsin", 
+        desc: "Özel işlem sonrası iklimlendirilmiş araçlarla sevkiyat" 
+      },
+      { 
+        icon: <Factory className="w-6 h-6 text-gray-600" />, 
+        title: "Tesisten Alırım", 
+        desc: "Randevu saatinizde Çınardağ tesisimizden paket teslimi" 
+      },
     ],
   },
 ];
@@ -67,18 +131,40 @@ const animals = [
   },
 ];
 
+// Variants for smooth slide transitions (Subtler distance)
+const slideVariants = {
+  enter: (direction: number) => ({
+    x: direction > 0 ? 25 : -25,
+    opacity: 0,
+    filter: "blur(2px)",
+  }),
+  center: {
+    zIndex: 1,
+    x: 0,
+    opacity: 1,
+    filter: "blur(0px)",
+  },
+  exit: (direction: number) => ({
+    zIndex: 0,
+    x: direction < 0 ? 25 : -25,
+    opacity: 0,
+    filter: "blur(2px)",
+  }),
+};
+
 export default function SmartWizard() {
   const [currentStep, setCurrentStep] = useState(0);
+  const [direction, setDirection] = useState(1);
   const [selections, setSelections] = useState<Record<number, number>>({});
 
   const totalSteps = steps.length;
-  const progress = Math.round(((currentStep + 1) / totalSteps) * 100);
+  const progress = Math.round(((currentStep) / (totalSteps - 1)) * 100);
   const isLastStep = currentStep === totalSteps - 1;
 
   const handleSelect = (optionIndex: number) => {
     // If it's the first step (animal selection) and "Küçükbaş" is selected (index 1)
     if (currentStep === 0 && optionIndex === 1) {
-      const msg = "Merhaba, Web sitenizden ulaşıyorum. küçükbaş kurbanlıklar hakkında bilgi almak istiyorum.";
+      const msg = "Merhaba, Web sitenizden ulaşıyorum. Küçükbaş kurbanlıklar hakkında bilgi almak istiyorum.";
       window.open(`https://wa.me/902129099495?text=${encodeURIComponent(msg)}`, "_blank");
       return;
     }
@@ -89,13 +175,17 @@ export default function SmartWizard() {
     // Auto-advance after a brief visual feedback delay
     if (!isLastStep) {
       setTimeout(() => {
+        setDirection(1);
         setCurrentStep((s) => s + 1);
       }, 350);
     }
   };
 
   const goBack = () => {
-    if (currentStep > 0) setCurrentStep((s) => s - 1);
+    if (currentStep > 0) {
+      setDirection(-1);
+      setCurrentStep((s) => s - 1);
+    }
   };
 
   const buildWhatsAppMessage = () => {
@@ -113,14 +203,14 @@ export default function SmartWizard() {
       ? steps[4].options[selections[4]]?.title
       : "Belirtilmedi";
 
-    return `Merhaba, Akıllı Seçim Asistanı üzerinden kurban kaydı yapmak istiyorum.
+    return `Merhaba, Özel Rezervasyon ekranı üzerinden kurban kaydı yapmak istiyorum.
 
-📋 Tercihlerim:
-🐄 Kurban Türü: ${animalType}
-👥 Kayıt Modeli: ${registrationModel}
-⚖️ Et Verimi: ${meatYield}
-🥩 İşleme: ${processing}
-🚚 Teslimat: ${delivery}`;
+📋 *Tercihlerim:*
+🐄 *Kurban Türü:* ${animalType}
+👥 *Kayıt Modeli:* ${registrationModel}
+⚖️ *Et Verimi:* ${meatYield}
+🥩 *İşleme:* ${processing}
+🚚 *Teslimat:* ${delivery}`;
   };
 
   const handleFinish = () => {
@@ -132,156 +222,247 @@ export default function SmartWizard() {
   };
 
   return (
-    <section className={styles.wizard} id="akilli-asistan">
-
-      <div className={styles.wizardInner}>
-        {/* Badge */}
-        <div className={styles.wizardBadge}>
-          <span className={styles.wizardBadgeInner}>
-            <Sparkles size={16} className={styles.wizardBadgeIcon} />
-            AKILLI SEÇİM ASİSTANI
-          </span>
-        </div>
-
-        {/* Title */}
-        <h2 className={styles.wizardTitle}>{steps[currentStep].question}</h2>
-
-        {/* Step Content */}
-        <div className={styles.stepContent} key={currentStep}>
-          {currentStep === 0 ? (
-            /* Animal selection */
-            <div className={styles.animalGrid}>
-              {animals.map((animal, i) => (
-                <div
-                  key={i}
-                  className={`${styles.animalCard} ${selections[0] === i ? styles.animalCardSelected : ""}`}
-                  onClick={() => handleSelect(i)}
-                >
-                  <div className={styles.animalImageWrap}>
-                    {animal.popular && (
-                      <span className={styles.popularBadge}>Popüler</span>
-                    )}
-                    <img
-                      src={animal.image}
-                      alt={animal.name}
-                      className={styles.animalImage}
-                    />
-                  </div>
-                  <div className={styles.animalName}>{animal.name}</div>
-                  <div className={styles.animalCta}>SEÇMEK İÇİN TIKLA</div>
-                </div>
-              ))}
+    <section className="bg-white py-24 px-4 font-sans text-gray-900 border-t border-gray-100" id="akilli-asistan">
+      <div className="max-w-[50rem] mx-auto">
+        
+        {/* New Professional Header & Top Deals */}
+        <div className="flex flex-col items-center mb-12 max-w-3xl mx-auto text-center">
+          {/* Top Chips / Deals */}
+          <div className="flex flex-wrap items-center justify-center gap-2.5 mb-6">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-[10px] font-extrabold tracking-widest uppercase shadow-sm border border-emerald-100/50 hover:-translate-y-0.5 transition-transform">
+              <Gift size={13} strokeWidth={2.5} />
+              1.000 ₺ Erken Kayıt
             </div>
-          ) : (
-            /* Generic options */
-            <div className={styles.optionsList}>
-              {steps[currentStep].options.map((opt, i) => (
-                <div
-                  key={i}
-                  className={`${styles.optionCard} ${selections[currentStep] === i ? styles.optionCardSelected : ""}`}
-                  onClick={() => handleSelect(i)}
-                >
-                  <div className={styles.optionIcon}>{opt.icon}</div>
-                  <div className={styles.optionContent}>
-                    <div className={styles.optionTitle}>{opt.title}</div>
-                    <p className={styles.optionDesc}>{opt.desc}</p>
-                  </div>
-                  {opt.extra && <span className={styles.optionExtra}>{opt.extra}</span>}
-                </div>
-              ))}
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-blue-50 text-blue-700 rounded-full text-[10px] font-extrabold tracking-widest uppercase shadow-sm border border-blue-100/50 hover:-translate-y-0.5 transition-transform">
+              <UserPlus size={13} strokeWidth={2.5} />
+              İlk Kayıt: +500 ₺
             </div>
-          )}
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-orange-50 text-orange-700 rounded-full text-[10px] font-extrabold tracking-widest uppercase shadow-sm border border-orange-100/50 hover:-translate-y-0.5 transition-transform">
+              <Users size={13} strokeWidth={2.5} />
+              7'li Grup: +500 ₺
+            </div>
+          </div>
+
+          <h2 className="text-4xl sm:text-[2.75rem] font-extrabold tracking-tight text-gray-900 mb-5 leading-tight">
+            Adım Adım Kurban Kaydı
+          </h2>
+          <p className="text-base sm:text-[17px] text-gray-500 font-medium leading-relaxed max-w-2xl px-2">
+            İhtiyacınıza uygun seçenekleri (hisse, grup, et verimi ve teslimat yöntemi) kolayca belirleyebilir ve indirim fırsatlarıyla rezervasyonunuzu WhatsApp üzerinden tamamlayabilirsiniz.
+          </p>
         </div>
 
-        {/* Progress */}
-        <div className={styles.progressArea}>
-          <div className={styles.progressHeader}>
-            <span className={styles.progressLabel}>İLERLEME</span>
-            <span className={styles.progressPercent}>%{progress}</span>
-          </div>
-          <div className={styles.progressTrack}>
-            <div className={styles.progressFill} style={{ width: `${progress}%` }} />
-          </div>
-        </div>
-
-        {/* Nav Buttons */}
-        <div className={styles.wizardNav}>
-          {currentStep > 0 && (
-            <button className="btn btn--outline" onClick={goBack}>
-              ← Geri
+        {/* Wizard Track */}
+        <div className="flex flex-col items-center mb-10 max-w-2xl mx-auto px-2"> 
+          <div className="w-full flex items-center justify-between mb-3">
+            <button 
+              onClick={goBack}
+              disabled={currentStep === 0}
+              className={cn(
+                "p-2.5 rounded-full transition-all flex items-center justify-center bg-gray-50 border border-gray-200 outline-none hover:shadow-sm hover:border-gray-300",
+                currentStep === 0 ? "opacity-0 invisible" : "opacity-100 hover:bg-white hover:-translate-x-1"
+              )}
+            >
+              <ArrowLeft className="w-5 h-5 text-gray-700" />
             </button>
-          )}
-          {isLastStep && (
+            <div className="text-[11px] font-extrabold tracking-widest text-gray-400 uppercase">
+              Adım <span className="text-gray-900 mx-0.5 text-sm">{currentStep + 1}</span> / {totalSteps}
+            </div>
+          </div>
+          
+          {/* Progress Bar */}
+          <div className="w-full h-[6px] bg-gray-100 rounded-full overflow-hidden shadow-inner flex">
+            <motion.div 
+              className="h-full bg-gradient-to-r from-orange-400 to-orange-500 rounded-full"
+              initial={{ width: 0 }}
+              animate={{ width: `${progress}%` }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            />
+          </div>
+        </div>
+
+        {/* Dynamic Step Content */}
+        <div className="relative flex items-start justify-center overflow-visible min-h-[500px] max-w-3xl mx-auto">
+          <AnimatePresence mode="popLayout" custom={direction}>
+            <motion.div
+              key={currentStep}
+              custom={direction}
+              variants={slideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: { type: "spring", stiffness: 450, damping: 40 },
+                opacity: { duration: 0.2 },
+                filter: { duration: 0.2 }
+              }}
+              className="w-full absolute top-0"
+            >
+              {/* Animated Title */}
+              {currentStep > 0 && (
+                <div className="text-center mb-10">
+                  <h2 className="text-3xl sm:text-[2.2rem] font-extrabold tracking-tight text-gray-900 mb-4 leading-tight">
+                    <VerticalCutReveal
+                      splitBy="words"
+                      staggerDuration={0.08}
+                      staggerFrom="first"
+                      reverse={true}
+                      transition={{
+                        type: "spring",
+                        stiffness: 250,
+                        damping: 40,
+                        delay: 0.1,
+                      }}
+                    >
+                      {steps[currentStep].question}
+                    </VerticalCutReveal>
+                  </h2>
+                </div>
+              )}
+
+              {currentStep === 0 ? (
+                /* Enhanced Animal selection UI */
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mt-6 px-1 max-w-2xl mx-auto">
+                  {animals.map((animal, i) => {
+                    const isSelected = selections[0] === i;
+                    return (
+                      <div
+                        key={i}
+                        className={cn(
+                          "relative p-8 rounded-[2rem] cursor-pointer transition-all duration-500 flex flex-col items-center bg-white border-2 overflow-hidden group w-full hover:-translate-y-1",
+                          isSelected
+                            ? "border-orange-500 shadow-[0_20px_40px_rgba(234,88,12,0.15)] ring-4 ring-orange-100/50 z-10 scale-[1.03]"
+                            : "border-gray-100/80 hover:border-orange-200 shadow-sm hover:shadow-xl"
+                        )}
+                        onClick={() => handleSelect(i)}
+                      >
+                        {isSelected && (
+                          <motion.div
+                            layoutId="animal-active"
+                            className="absolute inset-0 bg-gradient-to-b from-orange-50/80 via-white to-orange-50/30 pointer-events-none"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.4 }}
+                          />
+                        )}
+                        
+                        <div className="relative w-40 h-40 sm:w-48 sm:h-48 mb-6 mt-2">
+                          {animal.popular && (
+                            <div className="absolute -top-3 -right-6 z-20">
+                              <span className="bg-gradient-to-r from-orange-500 to-orange-400 text-white px-3 py-1.5 rounded-full text-[10px] font-extrabold tracking-widest uppercase shadow-lg shadow-orange-500/30 border border-orange-400/50">
+                                Çok Tercih Edilen
+                              </span>
+                            </div>
+                          )}
+                          <img
+                            src={animal.image}
+                            alt={animal.name}
+                            className="w-full h-full object-contain relative z-10 group-hover:scale-110 transition-transform duration-700 drop-shadow-xl"
+                          />
+                          <div className={cn(
+                            "absolute inset-0 rounded-full blur-[30px] -z-0 transition-all duration-700",
+                            isSelected ? "bg-orange-400/20 scale-[1.4]" : "bg-gray-200/40 scale-[1.2] group-hover:bg-orange-300/20 group-hover:scale-[1.4]"
+                          )} />
+                        </div>
+                        
+                        <div className="text-[1.75rem] font-extrabold text-gray-900 mb-3 relative z-10 tracking-tight">{animal.name}</div>
+                        <div className={cn(
+                          "mt-2 px-8 py-2.5 rounded-full text-[11px] font-black tracking-widest relative z-10 transition-all duration-300 uppercase select-none",
+                          isSelected ? "bg-orange-500 text-white shadow-lg shadow-orange-500/30" : "bg-gray-100/80 text-gray-500 group-hover:bg-orange-100 group-hover:text-orange-600"
+                        )}>
+                          SEÇMEK İÇİN TIKLA
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : (
+                /* Generic list options UI */
+                <div className="flex flex-col gap-4 mt-6 px-1 max-w-2xl mx-auto">
+                  {steps[currentStep].options.map((opt, i) => {
+                    const isSelected = selections[currentStep] === i;
+                    return (
+                      <div
+                        key={i}
+                        className={cn(
+                          "relative p-5 sm:p-6 rounded-[1.5rem] cursor-pointer transition-all duration-300 flex items-center bg-white border-2 overflow-hidden group hover:-translate-y-1",
+                          isSelected
+                            ? "border-orange-500 shadow-[0_12px_30px_rgb(234,88,12,0.12)] bg-gradient-to-r from-orange-50/40 to-white ring-2 ring-orange-50 z-10 scale-[1.01]"
+                            : "border-gray-100/80 hover:border-orange-200 shadow-sm hover:shadow-lg"
+                        )}
+                        onClick={() => handleSelect(i)}
+                      >
+                        <div className={cn(
+                          "w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 mr-5 transition-all shadow-sm border",
+                          isSelected ? "bg-white border-orange-100 scale-110" : "bg-gray-50 border-gray-100 group-hover:bg-white group-hover:border-orange-100 group-hover:scale-105"
+                        )}>
+                          {opt.icon}
+                        </div>
+                        <div className="flex-1 text-left relative z-10">
+                          <div className={cn("text-xl sm:text-[1.4rem] font-bold transition-colors mb-1.5 leading-tight tracking-tight", isSelected ? "text-orange-950" : "text-gray-900")}>
+                            {opt.title}
+                          </div>
+                          <p className="text-[15px] font-medium text-gray-500 leading-snug pr-2">{opt.desc}</p>
+                        </div>
+                        
+                        {opt.extra && (
+                          <div className="shrink-0 ml-3 hidden sm:flex items-center">
+                            <span className={cn(
+                              "px-3 py-1.5 rounded-xl text-[10px] font-extrabold tracking-widest uppercase border",
+                              opt.extraColor === "orange" ? "bg-orange-50 text-orange-600 border-orange-200" :
+                              opt.extraColor === "green" ? "bg-green-50 text-emerald-600 border-emerald-200" :
+                              opt.extraColor === "blue" ? "bg-blue-50 text-blue-600 border-blue-200" :
+                              "bg-gray-50 text-gray-500 border-gray-200"
+                            )}>
+                              {opt.extra}
+                            </span>
+                          </div>
+                        )}
+                        
+                        {/* Mobile Extra block */}
+                        {opt.extra && (
+                          <div className="sm:hidden absolute top-4 right-4">
+                            <span className={cn(
+                              "px-2.5 py-1 rounded-lg text-[9px] font-bold tracking-widest uppercase border",
+                              opt.extraColor === "orange" ? "bg-orange-50 text-orange-600 border-orange-200" :
+                              opt.extraColor === "green" ? "bg-green-50 text-emerald-600 border-emerald-200" :
+                              opt.extraColor === "blue" ? "bg-blue-50 text-blue-600 border-blue-200" :
+                              "bg-gray-50 text-gray-500 border-gray-200"
+                            )}>
+                              {opt.extra}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Finish / Nav Controls */}
+        {isLastStep && (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.4 }}
+            className="mt-8 text-center z-10 relative"
+          >
             <button
-              className="btn btn--primary btn--lg"
+              className={cn(
+                "w-full sm:w-auto px-12 py-5 text-[17px] font-bold rounded-2xl transition-all duration-300 shadow-[0_8px_30px_rgb(34,197,94,0.3)]",
+                selections[currentStep] !== undefined
+                  ? "bg-gradient-to-r from-emerald-500 to-green-600 text-white hover:shadow-[0_12px_40px_rgb(34,197,94,0.4)] hover:-translate-y-1"
+                  : "bg-gray-100 text-gray-400 cursor-not-allowed shadow-none"
+              )}
               onClick={handleFinish}
               disabled={selections[currentStep] === undefined}
             >
-              WhatsApp ile Tamamla 💬
+              WhatsApp İle Kaydını Tamamla 💬
             </button>
-          )}
-        </div>
-
-        {/* Deals */}
-        <div className={styles.dealsArea}>
-          <div className={styles.dealsLabelWrapper}>
-            <div className={styles.dealsLine} />
-            <div className={styles.dealsLabel}>2026 ERKEN KAYIT FIRSATLARI</div>
-            <div className={styles.dealsLine} />
-          </div>
-
-          <div className={styles.mainDealCard}>
-            <div className={styles.mainDealLeft}>
-              <div className={styles.mainDealIcon}>
-                <Gift size={24} />
-              </div>
-              <div className={styles.mainDealInfo}>
-                <div className={styles.mainDealTitle}>Erken Kayıt Fırsatı</div>
-                <p className={styles.mainDealSub}>Bütün müşterilerimize özel</p>
-              </div>
-            </div>
-            <div className={styles.mainDealRight}>
-              <div className={styles.mainDealPrice}>1.000 ₺</div>
-              <div className={styles.mainDealUnit}>HİSSE BAŞI İNDİRİM</div>
-            </div>
-          </div>
-
-          <div className={styles.subDealsGrid}>
-            <div className={styles.subDealCard}>
-              <div className={styles.subDealBadge}>EK FIRSAT</div>
-              <div className={styles.subDealContent}>
-                <div className={styles.subDealLeft}>
-                  <div className={styles.subDealIcon}><UserPlus size={20} /></div>
-                  <div className={styles.subDealInfo}>
-                    <div className={styles.subDealTitle}>İlk Kayıt Avantajı</div>
-                    <p className={styles.subDealSub}>Yeni müşterilerimize özel</p>
-                  </div>
-                </div>
-                <div className={styles.subDealRight}>
-                  <div className={styles.subDealUnit}>HİSSE BAŞI</div>
-                  <div className={styles.subDealPrice}>500 ₺</div>
-                </div>
-              </div>
-            </div>
-
-            <div className={styles.subDealCard}>
-              <div className={styles.subDealBadge}>EK FIRSAT</div>
-              <div className={styles.subDealContent}>
-                <div className={styles.subDealLeft}>
-                  <div className={styles.subDealIcon}><Users size={20} /></div>
-                  <div className={styles.subDealInfo}>
-                    <div className={styles.subDealTitle}>Grup Bereketi</div>
-                    <p className={styles.subDealSub}>7 Hissedar beraber kayıt</p>
-                  </div>
-                </div>
-                <div className={styles.subDealRight}>
-                  <div className={styles.subDealUnit}>HİSSE BAŞI</div>
-                  <div className={styles.subDealPrice}>500 ₺</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          </motion.div>
+        )}
       </div>
     </section>
   );

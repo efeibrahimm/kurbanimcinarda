@@ -1,178 +1,204 @@
+/* =============================================
+   PACKAGES SECTION — Redesigned
+   ============================================= */
+
 .section {
-  padding: var(--space-20) 0;
-  background-color: var(--color-background-alt);
+  padding: var(--space-20) 0 var(--space-16);
+  background-color: #f8faf9;
 }
 
+/* ---- Header ---- */
 .header {
   text-align: center;
   margin-bottom: var(--space-12);
 }
 
-.title {
-  color: var(--color-text);
-  font-size: var(--text-5xl);
-  font-weight: 800;
-  margin-bottom: var(--space-6);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.1;
-}
-
-.promoBtn {
-  display: inline-flex;
-  flex-direction: column;
-  background-color: var(--color-accent);
-  color: var(--color-white);
-  padding: var(--space-4) var(--space-12);
-  border-radius: var(--radius-xl);
-  margin-bottom: var(--space-6);
-  box-shadow: 0 4px 14px rgba(232, 95, 28, 0.4);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-  text-decoration: none;
-}
-
-.promoBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(232, 95, 28, 0.5);
-}
-
-.promoTitle {
-  font-size: var(--text-lg);
+.sectionLabel {
+  display: inline-block;
+  font-size: 11px;
   font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
 }
 
-.promoDesc {
-  font-size: var(--text-sm);
-  font-weight: 600;
-  opacity: 0.9;
+.title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+  line-height: 1.15;
 }
 
 .subtitle {
   color: var(--color-text-light);
-  font-size: var(--text-sm);
-  max-width: 500px;
+  font-size: var(--text-base);
+  max-width: 480px;
   margin: 0 auto;
+  margin-bottom: 0;
+}
+
+/* ---- Cards Wrapper (for horizontal scroll on mobile) ---- */
+.cardsWrapper {
+  width: 100%;
 }
 
 .cardsContainer {
   display: flex;
+  gap: 16px;
   overflow-x: auto;
-  gap: var(--space-4);
-  padding-bottom: var(--space-8);
-  /* Snap scroll for mobile */
+  padding-bottom: var(--space-4);
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 }
 
 .cardsContainer::-webkit-scrollbar {
-  height: 6px;
+  height: 5px;
 }
+
 .cardsContainer::-webkit-scrollbar-thumb {
   background: var(--color-border);
   border-radius: var(--radius-full);
 }
 
+/* ---- Card Base ---- */
 .card {
-  flex: 0 0 85vw;
-  max-width: 350px;
+  flex: 0 0 80vw;
+  max-width: 290px;
+  min-width: 260px;
   position: relative;
-  background-color: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: 40px;
-  padding: var(--space-8) var(--space-5) var(--space-5);
+  background: #ffffff;
+  border: 1.5px solid #e4e9e6;
+  border-radius: 28px;
+  padding: 28px 22px 22px;
   display: flex;
   flex-direction: column;
-  transition: box-shadow var(--transition-base), transform var(--transition-base);
   scroll-snap-align: start;
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
 }
 
 .card:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 16px 40px rgba(23, 59, 41, 0.1);
   transform: translateY(-4px);
 }
 
-/* Specific Card Themes */
-.themeOrange {
-  border: 2px solid rgba(232, 95, 28, 0.3);
-  box-shadow: 0 0 20px rgba(232, 95, 28, 0.05);
+/* Popular card variant */
+.cardPopular {
+  border: 2.5px solid var(--color-accent);
+  background: #fffaf7;
+  padding-top: 44px; /* extra space for badge */
 }
 
-.themeDark {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+/* Dark card variant (if needed in future) */
+.cardDark {
+  background: var(--color-primary);
   border-color: var(--color-primary);
-}
-.themeDark .cardTitle,
-.themeDark .specValue {
-  color: var(--color-white);
+  color: #ffffff;
 }
 
-/* Top Badge */
-.topBadge {
+/* ---- Popular Badge ---- */
+.popularBadge {
   position: absolute;
-  top: -12px;
+  top: -1px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--color-accent);
-  color: var(--color-white);
-  font-size: 10px;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-size: 10.5px;
   font-weight: 800;
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-full);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   white-space: nowrap;
+  padding: 6px 16px;
+  border-radius: 0 0 14px 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-/* Icon Box */
+/* ---- Card Top (Icon) ---- */
+.cardTop {
+  margin-bottom: 16px;
+}
+
 .iconBox {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: var(--space-6);
 }
 
-/* Icon colors */
-.iconGray { background-color: #f0f2f5; color: #6b7280; }
-.iconBlue { background-color: #e0f2fe; color: #0284c7; }
-.iconOrange { background-color: #ffedd5; color: #ea580c; }
-.iconGreen { background-color: #dcfce7; color: #16a34a; }
-.iconDarkWhite { background-color: rgba(255, 255, 255, 0.1); color: #e5e7eb; }
-
-/* Texts */
-.cardTitle {
-  font-size: var(--text-2xl);
-  font-weight: 800;
-  color: var(--color-primary);
-  margin-bottom: var(--space-2);
-  line-height: 1.2;
-}
-
-.cardSubtitle {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: var(--space-6);
+/* Icon color variants */
+.icon--gray {
+  background: #f0f0f0;
   color: #6b7280;
 }
 
-.themeDark .cardSubtitle {
+.icon--blue {
+  background: #eff6ff;
+  color: #3b82f6;
+}
+
+.icon--orange {
+  background: #fff7ed;
   color: var(--color-accent);
 }
 
-/* Specs */
+.icon--green {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+/* ---- Title Section ---- */
+.titleSection {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cardTitle {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+.cardDark .cardTitle {
+  color: #ffffff;
+}
+
+.groupLabel {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.cardDark .groupLabel {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ---- Divider ---- */
+.divider {
+  height: 1px;
+  background: #eaeeec;
+  margin: 14px 0;
+}
+
+.cardDark .divider {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ---- Specs ---- */
 .specs {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
-  margin-bottom: var(--space-6);
-  padding-bottom: var(--space-6);
-  /* border-bottom will be handled per spec unless it's dark card */
+  gap: 10px;
 }
 
 .specRow {
@@ -182,151 +208,234 @@
 }
 
 .specLabel {
-  font-size: var(--text-xs);
+  font-size: 13px;
   color: var(--color-text-muted);
+  font-weight: 500;
 }
 
-.themeDark .specLabel {
-  color: rgba(255,255,255,0.6);
+.cardDark .specLabel {
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .specValue {
-  font-size: var(--text-sm);
+  font-size: 13.5px;
   font-weight: 700;
   color: var(--color-text);
 }
 
-/* Features */
+.cardDark .specValue {
+  color: #ffffff;
+}
+
+/* ---- Features ---- */
 .featuresList {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
-  margin-bottom: var(--space-8);
-  flex-grow: 1;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .featureItem {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  font-size: 13px;
-  font-weight: 600;
+  gap: 10px;
 }
 
 .featureIcon {
   flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.checkGreen { color: #10b981; }
-.checkOrange { color: var(--color-accent); }
-
-/* Status Box */
-.statusBox {
-  background-color: #f9fafb;
-  border-radius: var(--radius-lg);
-  padding: var(--space-4);
-  text-align: center;
-  margin-bottom: var(--space-4);
+.iconGreen {
+  color: #16a34a;
+  background: #f0fdf4;
 }
 
-.themeDark .statusBox {
-  background-color: rgba(255,255,255,0.1);
+.iconOrange {
+  color: var(--color-accent);
+  background: #fff7ed;
+}
+
+.featureText {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.cardDark .featureText {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ---- Spacer (pushes status + button to bottom) ---- */
+.spacer {
+  flex: 1;
+  min-height: 12px;
+}
+
+/* ---- Status Box ---- */
+.statusBox {
+  background: #f3f7f5;
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.cardDark .statusBox {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .statusLabel {
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 700;
-  color: var(--color-text-muted);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: var(--space-1);
+  color: var(--color-text-muted);
 }
 
-.themeDark .statusLabel {
-  color: rgba(255,255,255,0.5);
+.cardDark .statusLabel {
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .statusValue {
-  font-size: var(--text-lg);
+  font-size: 1.05rem;
   font-weight: 800;
   color: var(--color-primary);
-  margin-bottom: var(--space-1);
 }
 
-.themeDark .statusValue {
-  color: var(--color-white);
+.cardDark .statusValue {
+  color: #ffffff;
 }
-.statusValueGreen { color: #16a34a; }
-.statusValueOrange { color: var(--color-accent); }
+
+.cardPopular .statusValue {
+  color: var(--color-accent);
+}
 
 .statusNote {
   font-size: 11px;
   font-style: italic;
   color: var(--color-text-muted);
 }
-.themeDark .statusNote {
-  color: rgba(255,255,255,0.6);
+
+.cardDark .statusNote {
+  color: rgba(255, 255, 255, 0.4);
 }
 
-/* Button */
+/* ---- CTA Button ---- */
 .ctaBtn {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-2);
+  gap: 8px;
   width: 100%;
-  padding: var(--space-4);
-  border-radius: var(--radius-xl);
+  padding: 14px;
+  border-radius: 16px;
   font-size: var(--text-sm);
   font-weight: 700;
   text-decoration: none;
-  transition: all var(--transition-base);
+  transition: all 0.22s ease;
 }
 
-.btnDarkBlue {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-}
-.btnDarkBlue:hover {
-  background-color: var(--color-primary-hover);
-  color: var(--color-white);
+.ctaBtnDefault {
+  background: var(--color-primary);
+  color: #ffffff;
 }
 
-.btnWhite {
-  background-color: var(--color-white);
-  color: var(--color-primary);
-}
-.btnWhite:hover {
-  background-color: #f1f5f9;
-  color: var(--color-primary);
+.ctaBtnDefault:hover {
+  background: var(--color-primary-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(23, 59, 41, 0.25);
 }
 
-.ctaBtn svg {
-  width: 18px;
-  height: 18px;
+.ctaBtnPopular {
+  background: linear-gradient(135deg, var(--color-accent) 0%, #c94b12 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(232, 95, 28, 0.35);
 }
 
-/* Layout for Tablet and Desktop */
-@media (max-width: 768px) {
-  .title {
-    font-size: var(--text-3xl);
-    padding: 0 var(--space-4);
-  }
+.ctaBtnPopular:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(232, 95, 28, 0.45);
+}
+
+/* ---- Footer Note ---- */
+.footerNote {
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+  margin-top: var(--space-8);
+  margin-bottom: 0;
+}
+
+.footerNote strong {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+/* Tablet: 2x2 grid */
+@media (min-width: 640px) and (max-width: 1023px) {
   .cardsContainer {
-    padding-left: var(--space-6);
-    padding-right: var(--space-6);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+
+  .card {
+    flex: unset;
+    max-width: none;
+    min-width: unset;
   }
 }
 
+/* Desktop: 4 in a row */
 @media (min-width: 1024px) {
   .cardsContainer {
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     overflow-x: visible;
+    padding-bottom: 0;
+    align-items: stretch;
   }
+
   .card {
-    flex: 1 1 0; /* equal width strategy */
-    max-width: 280px;
+    flex: unset;
+    max-width: none;
+    min-width: unset;
+  }
+}
+
+/* Mobile tweaks */
+@media (max-width: 639px) {
+  .section {
+    padding: var(--space-12) 0 var(--space-10);
+  }
+
+  .cardsContainer {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  .card {
+    flex: 0 0 78vw;
+    scroll-snap-align: center;
   }
 }
