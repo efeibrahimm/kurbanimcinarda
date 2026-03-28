@@ -28,6 +28,12 @@
    KURBANIM ÇINARDA — Global Design System
    =================================== */
 
+/* ── Horizontal overflow prevention (outside @layer for max specificity) ── */
+html,
+body {
+  overflow-x: clip;
+}
+
 /* ===== CSS Custom Properties ===== */
 :root {
   /* — Color Palette — */
@@ -123,7 +129,6 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: clip;
   }
 
   body {
@@ -132,7 +137,6 @@
     line-height: 1.6;
     color: var(--color-text);
     background-color: var(--color-background);
-    overflow-x: clip;
   }
 
   h1, h2, h3, h4, h5, h6 {
