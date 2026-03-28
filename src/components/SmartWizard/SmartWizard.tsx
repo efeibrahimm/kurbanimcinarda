@@ -110,7 +110,7 @@ const steps: Step[] = [
       {
         icon: <Factory className="w-6 h-6 text-gray-600" />,
         title: "Tesisten Alırım",
-        desc: "Randevu saatinizde Çınardağ tesisimizden paket teslimi"
+        desc: "Randevu saatinizde Çınar tesisimizden paket teslimi"
       },
     ],
   },

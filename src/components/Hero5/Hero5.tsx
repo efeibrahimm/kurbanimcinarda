@@ -14,23 +14,25 @@ export default function Hero5() {
   };
 
   return (
-    <section className="relative w-full min-h-[100dvh] flex flex-col justify-center md:items-center pt-[170px] sm:pt-[190px] md:pt-[200px] pb-16 overflow-hidden">
+    <section className="relative w-full min-h-[100dvh] bg-[#0c1a12] flex flex-col justify-center md:items-center pt-[170px] sm:pt-[190px] md:pt-[200px] pb-16 overflow-hidden">
       
       {/* ── IMAGE BACKGROUND ── */}
-      <div className="absolute inset-0 w-full h-full z-0 overflow-hidden bg-[#0c1a12]">
+      {/* Height restricted on mobile to prevent blurry zoom-in of wide desktop images */}
+      <div className="absolute top-0 left-0 w-full h-[65dvh] sm:h-full z-0 overflow-hidden">
         <Image 
           src="/banner_image/section_1.png" 
           alt="Çınar Kurban Tesisleri" 
           fill 
           priority
-          className="object-cover object-[85%_center] sm:object-center transition-all duration-700"
+          className="object-cover object-[85%_top] sm:object-center transition-all duration-700"
         />
+        {/* Soft fade-out for bottom edge of image on mobile */}
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0c1a12] to-transparent sm:hidden z-10" />
       </div>
 
       {/* ── OVERLAYS ── */}
-      {/* Brand-color elegant dark overlay for mobile to keep text readable, black for desktop */}
-      <div className="absolute inset-0 bg-[#0c1a12]/75 sm:bg-black/60 z-0 mix-blend-multiply sm:mix-blend-normal"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-[#fafafa] via-transparent to-black/40 z-0"></div>
+      <div className="absolute inset-0 bg-[#0c1a12]/40 sm:bg-black/60 z-0 mix-blend-multiply sm:mix-blend-normal"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#fafafa] via-[#0c1a12]/95 sm:via-transparent to-black/40 z-0"></div>
 
       {/* ── CONTENT ── */}
       <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center">
