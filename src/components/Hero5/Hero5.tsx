@@ -14,7 +14,7 @@ export default function Hero5() {
   };
 
   return (
-    <section className="relative w-full min-h-[90vh] sm:min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-[100dvh] flex flex-col justify-center md:items-center pt-[140px] md:pt-[160px] pb-16 overflow-hidden">
       
       {/* ── IMAGE BACKGROUND (Replaced Video) ── */}
       <div className="absolute inset-0 w-full h-full z-0">
@@ -32,7 +32,7 @@ export default function Hero5() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#fafafa] via-transparent to-black/30 z-0"></div>
 
       {/* ── CONTENT ── */}
-      <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center mt-12 sm:mt-0">
+      <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center">
         
         {/* Top badge */}
         <motion.div 
