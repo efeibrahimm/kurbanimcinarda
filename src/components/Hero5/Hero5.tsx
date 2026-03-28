@@ -18,28 +18,19 @@ export default function Hero5() {
       
       {/* ── IMAGE BACKGROUND ── */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden bg-[#0c1a12]">
-        {/* Mobile Background (AI Generated Cinematic) */}
-        <Image 
-          src="/banner_image/produced_bg_cinematic.png" 
-          alt="Çınar Kurban Özel Üretim Tesisleri" 
-          fill 
-          priority
-          className="object-cover object-center sm:hidden transition-all duration-700"
-        />
-        {/* Desktop Background (Original) */}
         <Image 
           src="/banner_image/section_1.png" 
           alt="Çınar Kurban Tesisleri" 
           fill 
           priority
-          className="object-cover object-center hidden sm:block transition-all duration-700"
+          className="object-cover object-[85%_center] sm:object-center transition-all duration-700"
         />
       </div>
 
       {/* ── OVERLAYS ── */}
-      {/* Brand-color rich dark overlay for mobile, elegant black for desktop */}
-      <div className="absolute inset-0 bg-[#0c1a12]/85 sm:bg-black/60 z-0 mix-blend-multiply sm:mix-blend-normal"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-[#fafafa] via-transparent to-black/50 z-0"></div>
+      {/* Brand-color elegant dark overlay for mobile to keep text readable, black for desktop */}
+      <div className="absolute inset-0 bg-[#0c1a12]/75 sm:bg-black/60 z-0 mix-blend-multiply sm:mix-blend-normal"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#fafafa] via-transparent to-black/40 z-0"></div>
 
       {/* ── CONTENT ── */}
       <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center">
