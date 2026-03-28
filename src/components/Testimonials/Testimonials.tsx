@@ -40,7 +40,7 @@ const testimonials: Testimonial[] = [
   },
   {
     text: "Sadece profesyonel bir kesimhane değil, aynı zamanda manevi havayı da hissettiğiniz bir yer. Kesim anında ismimizin zikredilmesi ve tekbirlerle sürecin yürütülmesi bizi çok duygulandırdı.",
-    name: "B. Ersoy",
+    name: "B. Akay",
     location: "Ümraniye / İstanbul",
     initial: "B"
   },
@@ -72,7 +72,7 @@ export default function Testimonials() {
   return (
     <section className="bg-gray-50 py-24 sm:py-32 relative overflow-hidden" id="referanslarimiz">
       <div className="container z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

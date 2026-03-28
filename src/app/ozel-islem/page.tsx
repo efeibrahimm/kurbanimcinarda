@@ -145,7 +145,7 @@ export default function OzelIslemPage() {
             >
                {/* Kutucuk 1: Et Dinlendirme */}
                <div className="relative rounded-[2rem] p-8 sm:p-10 flex flex-col justify-between text-white aspect-square shadow-xl group hover:-translate-y-2 transition-transform overflow-hidden">
-                  <div className="absolute inset-0 bg-cover bg-center z-0 group-hover:scale-110 transition-transform duration-700" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1603048297172-c92544798d5e?auto=format&fit=crop&q=80')" }} />
+                  <div className="absolute inset-0 bg-cover bg-center z-0 group-hover:scale-110 transition-transform duration-700" style={{ backgroundImage: "url('/banner_image/cinematic_hero.png')" }} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-0" />
                   
                   <div className="p-4 bg-white/20 backdrop-blur-md w-fit rounded-2xl mb-8 relative z-10 border border-white/20">
@@ -159,7 +159,7 @@ export default function OzelIslemPage() {
 
                {/* Kutucuk 2: Kıyma & Kuşbaşı */}
                <div className="relative rounded-[2rem] p-8 sm:p-10 flex flex-col justify-between aspect-square group hover:-translate-y-2 transition-transform overflow-hidden shadow-xl">
-                  <div className="absolute inset-0 bg-cover bg-center z-0 group-hover:scale-110 transition-transform duration-700" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&q=80')" }} />
+                  <div className="absolute inset-0 bg-cover bg-center z-0 group-hover:scale-110 transition-transform duration-700" style={{ backgroundImage: "url('/banner_image/islamic_bull.png')" }} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-[#0c1a12]/50 z-0" />
                   
                   <div className="p-4 bg-orange-500 text-white w-fit rounded-2xl mb-8 relative z-10 border border-white/10">
@@ -173,7 +173,7 @@ export default function OzelIslemPage() {
 
                {/* Kutucuk 3: Lokum Kıvamında (Large) */}
                <div className="relative border border-gray-100 rounded-[2rem] p-8 sm:p-10 flex flex-col justify-between aspect-[2/1] sm:aspect-auto shadow-xl sm:col-span-2 group hover:-translate-y-2 transition-transform overflow-hidden">
-                 <div className="absolute inset-0 bg-cover bg-center z-0 group-hover:scale-105 transition-transform duration-700" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1593361099689-54eb2d8b5127?auto=format&fit=crop&q=80')" }} />
+                 <div className="absolute inset-0 bg-cover bg-center z-0 group-hover:scale-105 transition-transform duration-700" style={{ backgroundImage: "url('/banner_image/islamic_ram.png')" }} />
                  <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-transparent z-0" />
                  
                  <div className="flex justify-between items-start relative z-10">
@@ -285,7 +285,7 @@ export default function OzelIslemPage() {
             viewport={{ once: true }}
             className="bg-[#0c1a12] rounded-[3rem] p-10 sm:p-16 text-center shadow-2xl relative overflow-hidden h-[500px] flex flex-col justify-center items-center"
           >
-             <div className="absolute inset-0 bg-cover bg-center z-0 opacity-40 hover:scale-105 transition-transform duration-[2s]" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1544378730-8b5104b207eb?auto=format&fit=crop&q=80')" }} />
+             <div className="absolute inset-0 bg-cover bg-center z-0 opacity-40 hover:scale-105 transition-transform duration-[2s]" style={{ backgroundImage: "url('/banner_image/islamic_bull.png')" }} />
              <div className="absolute inset-0 bg-gradient-to-tr from-[#0c1a12]/90 via-black/70 to-[#0c1a12]/90 z-0 pointer-events-none" />
              
              <h2 className={`${outfit.className} text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6 relative z-10 max-w-3xl mx-auto`}>

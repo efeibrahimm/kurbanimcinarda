@@ -26,10 +26,10 @@ export default function HakkimizdaPage() {
       
       {/* ── 1. REAL PHOTOGRAPHY HERO (Doğal Çiftlik/Gündoğumu) ── */}
       <section className="relative w-full h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-        {/* Real life farm/cattle photo from Unsplash */}
+        {/* Real life farm/cattle photo from AI Generator guarantees Islamic safety */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 transform scale-105"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1544378730-8b5104b207eb?auto=format&fit=crop&q=80')" }} 
+          style={{ backgroundImage: "url('/banner_image/islamic_bull.png')" }} 
         >
           {/* Deep dark fade overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/90 z-0"></div>
@@ -113,10 +113,10 @@ export default function HakkimizdaPage() {
               viewport={{ once: true }}
               className="relative aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl"
             >
-              {/* Real professional close up photo of clean farm/cattle environment */}
+              {/* Real professional close up photo of safe islamic cattle (Ram) */}
               <div 
                 className="absolute inset-0 bg-cover bg-center z-0" 
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1594498653385-d5172c532c00?auto=format&fit=crop&q=80')" }}
+                style={{ backgroundImage: "url('/banner_image/islamic_ram.png')" }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0c1a12]/90 via-black/20 to-transparent z-10" />
               
@@ -179,7 +179,7 @@ export default function HakkimizdaPage() {
             viewport={{ once: true }}
             className="bg-[#0c1a12] rounded-[3rem] p-10 sm:p-20 text-center shadow-2xl relative overflow-hidden h-[500px] flex flex-col justify-center items-center"
           >
-             <div className="absolute inset-0 bg-cover bg-center z-0 opacity-40 hover:scale-105 transition-transform duration-[2s]" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&q=80')" }} />
+             <div className="absolute inset-0 bg-cover bg-center z-0 opacity-40 hover:scale-105 transition-transform duration-[2s]" style={{ backgroundImage: "url('/banner_image/islamic_bull.png')" }} />
              <div className="absolute inset-0 bg-gradient-to-tr from-[#0c1a12]/90 via-black/70 to-[#0c1a12]/90 z-0 pointer-events-none" />
              
              <h2 className={`${outfit.className} text-3xl sm:text-4xl md:text-[2.75rem] font-extrabold text-white leading-tight mb-6 relative z-10 max-w-3xl mx-auto`}>

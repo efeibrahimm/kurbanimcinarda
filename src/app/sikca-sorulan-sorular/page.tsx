@@ -105,10 +105,10 @@ export default function FAQPage() {
         
         {/* ── 1. CINEMATIC HERO SECTION ── */}
         <section className="relative w-full h-[65vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-          {/* Unsplash Real Photography Background */}
+          {/* Safe Photography Background */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 transform scale-105"
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&q=80')" }} 
+            style={{ backgroundImage: "url('/banner_image/islamic_ram.png')" }} 
           >
             {/* Deep gradient for white navbar and central title visibility */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-[#0c1a12]"></div>
@@ -177,7 +177,7 @@ export default function FAQPage() {
               viewport={{ once: true }}
               className="bg-[#0c1a12] rounded-[3rem] p-10 sm:p-20 text-center relative overflow-hidden h-[450px] flex flex-col items-center justify-center shadow-2xl"
             >
-               <div className="absolute inset-0 bg-cover bg-center z-0 opacity-30 hover:scale-105 transition-transform duration-[2s]" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1594498653385-d5172c532c00?auto=format&fit=crop&q=80')" }} />
+               <div className="absolute inset-0 bg-cover bg-center z-0 opacity-30 hover:scale-105 transition-transform duration-[2s]" style={{ backgroundImage: "url('/banner_image/islamic_bull.png')" }} />
                <div className="absolute inset-0 bg-gradient-to-tr from-[#0c1a12]/90 via-black/80 to-[#0c1a12]/90 z-0 pointer-events-none" />
                
                <div className="bg-white/10 p-4 rounded-2xl mb-6 relative z-10 border border-white/20 backdrop-blur-sm">
