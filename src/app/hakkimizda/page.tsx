@@ -66,9 +66,9 @@ export default function HakkimizdaPage() {
         </div>
       </section>
 
-      {/* ── 2. HİKAYEMİZ & MİSYON (Modern Editorial Split) ── */}
-      <section className="py-20 sm:py-32 bg-white relative z-20">
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ── 2. HİKAYEMİZ & MİSYON (Modern Editorial Split with Overlap) ── */}
+      <section className="relative z-20 -mt-16 sm:-mt-24 w-full">
+        <div className="bg-white rounded-[2rem] sm:rounded-t-[3rem] shadow-2xl shadow-gray-200/50 pt-20 pb-16 sm:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-t-white relative overflow-hidden">
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             
@@ -169,30 +169,31 @@ export default function HakkimizdaPage() {
         <ServicesBlocks />
       </section>
 
-      {/* ── 5. İLETİŞİM / CTA BANNER ── */}
-      <section className="py-24 bg-white px-4">
-        <div className="container max-w-5xl mx-auto">
+      {/* ── 5. İLETİŞİM / CTA BANNER WITH IMAGE ── */}
+      <section className="py-24 bg-white px-4 w-full">
+        <div className="container max-w-7xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-orange-50 border border-orange-200 rounded-[3rem] p-10 sm:p-16 text-center shadow-lg relative overflow-hidden"
+            className="bg-[#0c1a12] rounded-[3rem] p-10 sm:p-20 text-center shadow-2xl relative overflow-hidden h-[500px] flex flex-col justify-center items-center"
           >
-             <div className="absolute right-0 top-0 w-64 h-64 bg-white/40 blur-[80px] rounded-full pointer-events-none" />
+             <div className="absolute inset-0 bg-cover bg-center z-0 opacity-40 hover:scale-105 transition-transform duration-[2s]" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&q=80')" }} />
+             <div className="absolute inset-0 bg-gradient-to-tr from-[#0c1a12]/90 via-black/70 to-[#0c1a12]/90 z-0 pointer-events-none" />
              
-             <h2 className={`${outfit.className} text-3xl sm:text-4xl md:text-[2.75rem] font-extrabold text-gray-900 leading-tight mb-6 relative z-10 max-w-3xl mx-auto`}>
+             <h2 className={`${outfit.className} text-3xl sm:text-4xl md:text-[2.75rem] font-extrabold text-white leading-tight mb-6 relative z-10 max-w-3xl mx-auto`}>
                Vekaletinizi Gönül Rahatlığıyla Bize Emanet Edebilirsiniz.
              </h2>
-             <p className={`${inter.className} text-gray-600 text-[16px] sm:text-[1.15rem] leading-relaxed max-w-2xl mx-auto mb-10 relative z-10`}>
-               İster Bağcılar'daki tesisimizi ziyaret edip kahvemizi için, ister Whatsapp'tan saniyeler içinde hissenizi ayırtın.
+             <p className={`${inter.className} text-gray-300 text-[16px] sm:text-[1.15rem] leading-relaxed max-w-2xl mx-auto mb-10 relative z-10 drop-shadow-md`}>
+               İster Bağcılar'daki tesisimizi ziyaret edip kahvemizi için, isterseniz de Whatsapp üzerinden uzman ekibimizle saniyeler içinde hissenizi ayırtın.
              </p>
              
              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
-               <Link href="https://wa.me/902129099495" target="_blank" className="w-full sm:w-auto px-8 py-4 rounded-full bg-orange-500 hover:bg-orange-600 text-white font-bold transition-transform active:scale-95 shadow-lg shadow-orange-500/25 flex justify-center items-center gap-2">
+               <Link href="https://wa.me/902129099495" target="_blank" className="w-full sm:w-auto px-8 py-4 rounded-full bg-orange-500 hover:bg-orange-600 text-white font-bold transition-transform active:scale-95 shadow-xl shadow-orange-500/30 flex justify-center items-center gap-2 backdrop-blur-md">
                  <CheckCircle2 size={20} /> Whatsapp'tan Ulaşın
                </Link>
-               <Link href="/iletisim" className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-gray-100 text-gray-900 border border-gray-200 font-bold transition-all flex justify-center items-center gap-2">
+               <Link href="/iletisim" className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold transition-all flex justify-center items-center gap-2 backdrop-blur-md">
                  <MapPin size={20} className="text-orange-500" /> Tesisimizi Ziyaret Edin
                </Link>
              </div>

@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Outfit, Inter } from "next/font/google";
 import Link from "next/link";
-import { HelpCircle, MessagesSquare } from "lucide-react";
+import { HelpCircle, MessagesSquare, CheckCircle2 } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -101,85 +101,108 @@ const faqs: FAQItem[] = [
 
 export default function FAQPage() {
   return (
-    <main className="min-h-screen bg-gray-50 pt-32 sm:pt-40 pb-24 relative overflow-hidden">
-        {/* Background Decorative Blur */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] opacity-20 bg-gradient-to-br from-orange-400 to-transparent blur-[120px] pointer-events-none rounded-full" />
+    <main className="min-h-screen bg-gray-50 flex flex-col overflow-hidden">
+        
+        {/* ── 1. CINEMATIC HERO SECTION ── */}
+        <section className="relative w-full h-[65vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+          {/* Unsplash Real Photography Background */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 transform scale-105"
+            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&q=80')" }} 
+          >
+            {/* Deep gradient for white navbar and central title visibility */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-[#0c1a12]"></div>
+          </div>
 
-        <div className="container z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl relative">
-          
-          {/* ── HEADER ── */}
-          <motion.div
-             initial={{ opacity: 0, y: 30 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-             className="flex flex-col items-center justify-center text-center mb-16 sm:mb-20"
-           >
-             <div className="inline-flex justify-center items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100/80 border border-orange-200 text-orange-600 font-extrabold text-[11px] uppercase tracking-widest mb-6 shadow-sm">
-               <HelpCircle size={14} className="text-orange-500" />
+          <div className="container relative z-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center mt-16">
+            <motion.div
+               initial={{ opacity: 0, scale: 0.9 }}
+               animate={{ opacity: 1, scale: 1 }}
+               transition={{ duration: 0.8, ease: "easeOut" }}
+               className="inline-flex justify-center items-center gap-2 px-5 py-2 rounded-full bg-white/10 border border-white/20 text-white font-extrabold text-[12px] uppercase tracking-widest mb-6 backdrop-blur-md"
+             >
+               <HelpCircle size={16} className="text-orange-400" />
                Aklınıza Takılanlar
-             </div>
+             </motion.div>
    
-             <h1 className={`${outfit.className} text-[2.5rem] sm:text-5xl md:text-[4rem] font-extrabold tracking-tight text-gray-900 leading-[1.1]`}>
+             <motion.h1 
+               initial={{ opacity: 0, y: 30 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.8, delay: 0.1 }}
+               className={`${outfit.className} text-[3rem] sm:text-5xl md:text-[5.5rem] font-extrabold tracking-tight text-white leading-[1.05] mb-6 drop-shadow-2xl`}
+             >
                Sıkça Sorulan <span className="text-orange-500">Sorular</span>
-             </h1>
-             <p className={`${inter.className} mt-6 text-gray-500 text-[16px] sm:text-[1.15rem] leading-[1.6] font-medium max-w-2xl mx-auto`}>
-               Kurbanlık hisse alımından kesim sürecine, et dağıtımından vekalet işlemlerine kadar aklınıza takılan tüm soruların cevaplarını burada derledik.
-             </p>
-          </motion.div>
+             </motion.h1>
+             
+             <motion.p 
+               initial={{ opacity: 0, y: 30 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.8, delay: 0.2 }}
+               className={`${inter.className} text-gray-300 text-[16px] sm:text-[1.2rem] leading-relaxed max-w-2xl mx-auto font-medium`}>
+               Kurbanlık hisse alımından kesim sürecine, et dağıtımından vekalet işlemlerine kadar merak ettiğiniz tüm detayları sizin için derledik.
+             </motion.p>
+          </div>
+        </section>
 
-          {/* ── ACCORDION LIST ── */}
+        {/* ── 2. ACCORDION LIST (With Overlap "Çıkıntı" Effect) ── */}
+        <section className="relative z-20 -mt-20 sm:-mt-28 w-full px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-white rounded-[2rem] sm:rounded-[2.5rem] shadow-xl shadow-gray-200/50 p-6 sm:p-10 md:p-14 border border-gray-100"
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="bg-white rounded-[2rem] sm:rounded-[3rem] shadow-2xl shadow-gray-200/50 p-6 sm:p-10 md:p-16 border border-gray-100/50"
           >
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq) => (
                 <AccordionItem key={faq.id} value={`item-${faq.id}`}>
-                  <AccordionTrigger className={`${outfit.className} text-[17px] sm:text-[19px] text-gray-900 group hover:no-underline`}>
-                    <span className="group-hover:text-orange-600 transition-colors mr-4 text-left leading-tight py-1">{faq.question}</span>
+                  <AccordionTrigger className={`${outfit.className} text-[18px] sm:text-[20px] text-gray-900 group hover:no-underline`}>
+                    <span className="group-hover:text-orange-600 transition-colors mr-4 text-left leading-tight py-2 font-bold">{faq.question}</span>
                   </AccordionTrigger>
-                  <AccordionContent className={`${inter.className} text-[15px] sm:text-[16px] text-gray-600 font-medium leading-[1.7] pt-2 pb-6 pr-4 sm:pr-10`}>
+                  <AccordionContent className={`${inter.className} text-[15px] sm:text-[17px] text-gray-600 font-medium leading-[1.7] pt-2 pb-6 pr-4 sm:pr-10`}>
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
           </motion.div>
+        </section>
 
-          {/* ── BOTTOM ACTION ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            viewport={{ once: true }}
-            className="mt-16 sm:mt-24 p-8 sm:p-12 bg-[#0c1a12] rounded-[2rem] sm:rounded-[3rem] text-center relative overflow-hidden flex flex-col items-center shadow-2xl"
-          >
-             <div className="absolute top-0 right-0 w-[400px] h-[400px] opacity-20 bg-gradient-to-br from-orange-400 to-transparent blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-             
-             <div className="bg-orange-500/10 p-4 rounded-full mb-6">
-               <MessagesSquare size={32} className="text-orange-500" />
-             </div>
-             
-             <h3 className={`${outfit.className} text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight`}>
-               Cevabınızı Bulamadınız mı?
-             </h3>
-             <p className={`${inter.className} text-gray-400 text-[16px] sm:text-[1.1rem] leading-relaxed max-w-xl mx-auto mb-10`}>
-               Çınar Kurban Destek Ekibi günün her saati size yardımcı olmak için hazır. WhatsApp üzerinden bizimle iletişime geçin, anında yanıtlayalım.
-             </p>
-             
-             <Link 
-               href="https://wa.me/902129099495" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-5 text-[16px] font-bold tracking-wide transition-all active:scale-95 shadow-lg shadow-orange-500/25"
-             >
-               WhatsApp Destek İste
-             </Link>
-          </motion.div>
+        {/* ── 3. BOTTOM ACTION CTA (With Unsplash Imagery) ── */}
+        <section className="py-24 px-4 w-full">
+          <div className="container max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true }}
+              className="bg-[#0c1a12] rounded-[3rem] p-10 sm:p-20 text-center relative overflow-hidden h-[450px] flex flex-col items-center justify-center shadow-2xl"
+            >
+               <div className="absolute inset-0 bg-cover bg-center z-0 opacity-30 hover:scale-105 transition-transform duration-[2s]" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1594498653385-d5172c532c00?auto=format&fit=crop&q=80')" }} />
+               <div className="absolute inset-0 bg-gradient-to-tr from-[#0c1a12]/90 via-black/80 to-[#0c1a12]/90 z-0 pointer-events-none" />
+               
+               <div className="bg-white/10 p-4 rounded-2xl mb-6 relative z-10 border border-white/20 backdrop-blur-sm">
+                 <MessagesSquare size={32} className="text-orange-400" />
+               </div>
+               
+               <h3 className={`${outfit.className} text-3xl sm:text-4xl md:text-[2.5rem] font-bold text-white mb-6 leading-tight relative z-10 max-w-2xl`}>
+                 Cevabınızı Bulamadınız mı?
+               </h3>
+               <p className={`${inter.className} text-gray-300 text-[16px] sm:text-[1.1rem] leading-relaxed max-w-xl mx-auto mb-10 relative z-10 drop-shadow-md`}>
+                 Çınar Kurban Destek Ekibi günün her saati size yardımcı olmak için hazır. WhatsApp üzerinden bizimle iletişime geçin, saniyeler içinde yanıtlayalım.
+               </p>
+               
+               <Link 
+                 href="https://wa.me/902129099495" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 className="relative z-10 inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white rounded-full px-10 py-5 text-[16px] font-bold tracking-wide transition-all active:scale-95 shadow-xl shadow-orange-500/30 backdrop-blur-md"
+               >
+                 <CheckCircle2 size={20} /> WhatsApp'tan Destek Al
+               </Link>
+            </motion.div>
+          </div>
+        </section>
 
-        </div>
       </main>
   );
 }
