@@ -1,36 +1,205 @@
-import styles from "../shared-page.module.css";
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import { Outfit, Inter } from "next/font/google";
+import Image from "next/image";
+import Link from "next/link";
+import { 
+  Leaf, 
+  ShieldCheck, 
+  MapPin, 
+  History, 
+  Medal, 
+  CheckCircle2,
+  Phone
+} from "lucide-react";
+
 import ServicesBlocks from "@/components/ServicesBlocks/ServicesBlocks";
+
+const outfit = Outfit({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export default function HakkimizdaPage() {
   return (
-    <main className={styles.pageContainer}>
-      <div className="container">
-        <div className={styles.header}>
-          <h1 className={styles.title}>Hakkımızda</h1>
-          <p className={styles.description}>
-            Yarım asırlık tecrübesiyle İstanbul'un en güvenilir kurbanlık satışı ve kesim merkezi.
-          </p>
+    <main className="min-h-screen bg-white flex flex-col overflow-hidden">
+      
+      {/* ── 1. REAL PHOTOGRAPHY HERO (Doğal Çiftlik/Gündoğumu) ── */}
+      <section className="relative w-full h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+        {/* Real life farm/cattle photo from Unsplash */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 transform scale-105"
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1544378730-8b5104b207eb?auto=format&fit=crop&q=80')" }} 
+        >
+          {/* Deep dark fade overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/90 z-0"></div>
         </div>
 
-        <div className={styles.contentWrapper}>
-          <h2>Çınar Kurban - Hikayemiz</h2>
-          <p>
-            Anadolu'nun bereketli meralarından özenle seçilen yerli besi danalarımızı, İslami usullere tam riayet ederek, 16 yılı aşkın profesyonel tesis deneyimiyle hisse sahiplerine sunuyoruz. Bizim için kurbanlık sadece bir ticaret değil; dini bir emanet, hassas bir ibadettir.
-          </p>
-          <p>
-            Bağcılar'da bulunan modern tesisimizde, veteriner hekim gözetiminden geçirilen kurbanlıklarımız, sağlık ve hijyen standartlarına %100 uyarak kesilir. 
-          </p>
+        <div className="container relative z-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center mt-16">
+          <motion.div
+             initial={{ opacity: 0, scale: 0.9 }}
+             animate={{ opacity: 1, scale: 1 }}
+             transition={{ duration: 0.8, ease: "easeOut" }}
+             className="inline-flex justify-center items-center gap-2 px-5 py-2 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-400 font-extrabold text-[12px] uppercase tracking-widest mb-6 backdrop-blur-md"
+           >
+             <History size={16} />
+             Kurumsal Vizyon
+           </motion.div>
+
+           <motion.h1 
+             initial={{ opacity: 0, y: 30 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.8, delay: 0.1 }}
+             className={`${outfit.className} text-[3rem] sm:text-5xl md:text-[5.5rem] font-extrabold tracking-tight text-white leading-[1.05] mb-6 drop-shadow-xl`}
+           >
+             Güven, Hijyen ve <br className="hidden md:block"/> 
+             <span className="text-orange-500">Yarım Asırlık</span> Tecrübe
+           </motion.h1>
+
+           <motion.p 
+             initial={{ opacity: 0, y: 30 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.8, delay: 0.2 }}
+             className={`${inter.className} text-gray-300 text-[16px] sm:text-[1.2rem] leading-relaxed max-w-2xl mx-auto font-medium`}>
+             Anadolu'nun bereketli meralarından özenle seçilen yerli besi kurbanlıklar, 16 yılı aşkın profesyonel tesis deneyimiyle hisse sahiplerine sunuluyor.
+           </motion.p>
+        </div>
+      </section>
+
+      {/* ── 2. HİKAYEMİZ & MİSYON (Modern Editorial Split) ── */}
+      <section className="py-20 sm:py-32 bg-white relative z-20">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <h2>Misyonumuz</h2>
-          <p>
-            Hissedarlarımızın ibadetini en başından sonuna kadar şeffaf, huzurlu ve usullere uygun şartlarda gerçekleştirmesini sağlamak. 
-            "Güven, Hijyen ve İslami Hassasiyet" ilkelerinden taviz vermeden hizmet ağımızı İstanbul'un her bir yanına ulaştırmak.
-          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+            
+            {/* Sol: Metin/Hikaye */}
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="flex flex-col gap-8"
+            >
+              <div>
+                <h2 className={`${outfit.className} text-[2.5rem] sm:text-[3rem] font-extrabold text-gray-900 leading-tight mb-6`}>
+                  Kurban Sadece Bir Ticaret Değil; <br/>
+                  <span className="text-orange-500">Dini Bir Emanettir.</span>
+                </h2>
+                <div className={`${inter.className} text-gray-600 text-[16px] sm:text-[1.1rem] leading-[1.8] flex flex-col gap-5`}>
+                  <p>
+                    Anadolu'nun bereketli meralarından özenle seçilen yerli besi danalarımızı, İslami usullere tam riayet ederek, 16 yılı aşkın profesyonel tesis deneyimiyle hissedarlarımıza sunuyoruz. Bizim için kurban süreci, hassas ve vebal taşıyan ulvi bir ibadettir.
+                  </p>
+                  <p>
+                    Bağcılar'da bulunan modern tesisimizde, tüm kurbanlıklarımız veteriner hekim gözetiminden geçirilir, sağlık ve hijyen standartlarına %100 uyarak İslami hassasiyetle kesilir.
+                  </p>
+                </div>
+              </div>
+
+               <div className="p-6 sm:p-8 bg-gray-50 border border-gray-100 rounded-3xl mt-4">
+                 <h4 className={`${outfit.className} text-xl font-bold text-gray-900 mb-3 flex items-center gap-2`}>
+                   <Medal className="text-orange-500" size={24} /> Bizim Misyonumuz
+                 </h4>
+                 <p className={`${inter.className} text-sm sm:text-[15px] text-gray-500 leading-relaxed font-medium`}>
+                   Hissedarlarımızın ibadetini en başından sonuna kadar şeffaf, huzurlu ve usullere uygun şartlarda gerçekleştirmesini sağlamak. <strong>"Güven, Hijyen ve İslami Hassasiyet"</strong> ilkelerinden taviz vermeden hizmet ağımızı tüm İstanbul'a ulaştırmaktır.
+                 </p>
+               </div>
+            </motion.div>
+
+            {/* Sağ: İmaj / Değerler Bento Grid */}
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl"
+            >
+              {/* Real professional close up photo of clean farm/cattle environment */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center z-0" 
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1594498653385-d5172c532c00?auto=format&fit=crop&q=80')" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0c1a12]/90 via-black/20 to-transparent z-10" />
+              
+              <div className="absolute inset-0 z-20 p-8 sm:p-12 flex flex-col justify-end">
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white">
+                      <ShieldCheck size={24} />
+                    </div>
+                    <div>
+                      <h4 className={`${outfit.className} text-xl font-bold text-white`}>Tam Akreditasyon</h4>
+                      <p className="text-white/70 text-sm font-medium">Veteriner Sağlık Sertifikalı</p>
+                    </div>
+                  </div>
+                  <p className={`${inter.className} text-white/80 text-sm leading-relaxed`}>
+                     Sürüye katılan her hayvanın menşei, aşı takvimi ve sağlık dökümleri Tarım Bakanlığı regülasyonlarına göre şeffafça dosyalara islenir.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+          </div>
         </div>
+      </section>
 
+      {/* ── 3. STATISTICS / TRUST INDICATORS ── */}
+      <section className="py-20 bg-[#0c1a12]">
+         <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x-0 md:divide-x divide-white/10 text-center">
+              
+              {[
+                { count: "16+", label: "Yıllık Tecrübe" },
+                { count: "10K+", label: "Mutlu Hissedar" },
+                { count: "%100", label: "İslami Kesim" },
+                { count: "7/24", label: "Güvenlik & Açık Tesis" }
+              ].map((stat, i) => (
+                <div key={i} className="flex flex-col items-center justify-center">
+                   <h3 className={`${outfit.className} text-4xl sm:text-5xl font-extrabold text-orange-500 mb-2`}>{stat.count}</h3>
+                   <span className={`${inter.className} text-gray-400 font-medium uppercase tracking-widest text-[11px] sm:text-xs`}>{stat.label}</span>
+                </div>
+              ))}
+
+            </div>
+         </div>
+      </section>
+
+      {/* ── 4. ESKİ SERVICES BİLEŞENİ (Optional) ── */}
+      {/* Sitenin varolan bileşenini buraya monte ettik ki eksik bir veri hissi yaşanmasın */}
+      <section className="py-10 bg-gray-50">
         <ServicesBlocks />
+      </section>
 
-      </div>
+      {/* ── 5. İLETİŞİM / CTA BANNER ── */}
+      <section className="py-24 bg-white px-4">
+        <div className="container max-w-5xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-orange-50 border border-orange-200 rounded-[3rem] p-10 sm:p-16 text-center shadow-lg relative overflow-hidden"
+          >
+             <div className="absolute right-0 top-0 w-64 h-64 bg-white/40 blur-[80px] rounded-full pointer-events-none" />
+             
+             <h2 className={`${outfit.className} text-3xl sm:text-4xl md:text-[2.75rem] font-extrabold text-gray-900 leading-tight mb-6 relative z-10 max-w-3xl mx-auto`}>
+               Vekaletinizi Gönül Rahatlığıyla Bize Emanet Edebilirsiniz.
+             </h2>
+             <p className={`${inter.className} text-gray-600 text-[16px] sm:text-[1.15rem] leading-relaxed max-w-2xl mx-auto mb-10 relative z-10`}>
+               İster Bağcılar'daki tesisimizi ziyaret edip kahvemizi için, ister Whatsapp'tan saniyeler içinde hissenizi ayırtın.
+             </p>
+             
+             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
+               <Link href="https://wa.me/902129099495" target="_blank" className="w-full sm:w-auto px-8 py-4 rounded-full bg-orange-500 hover:bg-orange-600 text-white font-bold transition-transform active:scale-95 shadow-lg shadow-orange-500/25 flex justify-center items-center gap-2">
+                 <CheckCircle2 size={20} /> Whatsapp'tan Ulaşın
+               </Link>
+               <Link href="/iletisim" className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-gray-100 text-gray-900 border border-gray-200 font-bold transition-all flex justify-center items-center gap-2">
+                 <MapPin size={20} className="text-orange-500" /> Tesisimizi Ziyaret Edin
+               </Link>
+             </div>
+          </motion.div>
+        </div>
+      </section>
+
     </main>
   );
 }
