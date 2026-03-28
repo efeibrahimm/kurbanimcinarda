@@ -1,10 +1,9 @@
 "use client";
 
-import { motion, LayoutGroup } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowDown, CheckCircle2, Phone, ShieldCheck, Scale, Truck, Gift } from 'lucide-react';
 import { Inter, Outfit } from 'next/font/google';
 import Image from 'next/image';
-import { TextRotate } from '@/components/ui/text-rotate';
 
 const outfit = Outfit({ subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
@@ -16,14 +15,14 @@ export default function Hero5() {
 
   return (
     <section className="relative w-full min-h-[100dvh] bg-[#0c1a12] flex flex-col justify-center md:items-center pt-[170px] sm:pt-[190px] md:pt-[200px] pb-16 overflow-hidden">
-      
+
       {/* ── IMAGE BACKGROUND ── */}
       {/* Height restricted on mobile to prevent blurry zoom-in of wide desktop images */}
       <div className="absolute top-0 left-0 w-full h-[65dvh] sm:h-full z-0 overflow-hidden">
-        <Image 
-          src="/banner_image/section_1.png" 
-          alt="Çınar Kurban Tesisleri" 
-          fill 
+        <Image
+          src="/banner_image/section_1.png"
+          alt="Çınar Kurban Tesisleri"
+          fill
           priority
           className="object-cover object-[85%_top] sm:object-center transition-all duration-700"
         />
@@ -37,9 +36,9 @@ export default function Hero5() {
 
       {/* ── CONTENT ── */}
       <div className="relative z-10 container mx-auto px-4 flex flex-col items-center text-center">
-        
+
         {/* Top badge */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -50,40 +49,18 @@ export default function Hero5() {
         </motion.div>
 
         {/* Title */}
-        <LayoutGroup>
-          <motion.h1 
-            layout
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className={`${outfit.className} flex flex-col items-center text-4xl sm:text-6xl md:text-7xl lg:text-[5rem] font-bold text-white leading-[1.1] tracking-tight max-w-4xl drop-shadow-lg`}
-          >
-            <motion.span layout>Aileniz İçin</motion.span>
-            <motion.div layout className="flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-4 mt-1 sm:mt-2">
-              <TextRotate
-                texts={[
-                  "En Kaliteli",
-                  "En Güvenilir",
-                  "En Sağlıklı",
-                  "En Adaletli"
-                ]}
-                mainClassName="text-orange-500 overflow-hidden"
-                staggerFrom="last"
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                exit={{ y: "-120%" }}
-                staggerDuration={0.025}
-                splitLevelClassName="overflow-hidden pb-1 sm:pb-2"
-                transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                rotationInterval={3000}
-              />
-              <motion.span layout>Seçim</motion.span>
-            </motion.div>
-          </motion.h1>
-        </LayoutGroup>
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className={`${outfit.className} text-4xl sm:text-6xl md:text-7xl lg:text-[5rem] font-bold text-white leading-[1.05] tracking-tight max-w-4xl drop-shadow-lg`}
+        >
+          Aileniz İçin <br />
+          <span className="text-orange-500">En Kaliteli</span> Seçim
+        </motion.h1>
 
         {/* Subtitle */}
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
@@ -93,20 +70,20 @@ export default function Hero5() {
         </motion.p>
 
         {/* Buttons */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-10 mb-20 flex flex-wrap justify-center gap-4 w-full sm:w-auto"
         >
-          <button 
+          <button
             onClick={() => window.open('https://wa.me/902129099495', '_blank')}
             className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 active:scale-95 transition-all text-white rounded-xl text-base font-bold shadow-xl shadow-orange-500/30"
           >
             <Phone size={20} /> Kayıt Ol & Bilgi Al
           </button>
-          
-          <button 
+
+          <button
             onClick={scrollToPackages}
             className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 active:scale-95 backdrop-blur-md border border-white/30 transition-all text-white rounded-xl text-base font-bold"
           >
@@ -115,7 +92,7 @@ export default function Hero5() {
         </motion.div>
 
         {/* ── FEATURE CARDS ── */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -172,7 +149,7 @@ export default function Hero5() {
             </div>
           </div>
         </motion.div>
-        
+
       </div>
     </section>
   );
