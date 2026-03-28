@@ -150,12 +150,12 @@ const AnimalSwitch = ({
   };
 
   return (
-    <div className={cn("flex justify-center flex-col sm:items-start items-stretch w-full sm:w-auto", className)}>
-      <div className="relative z-10 flex w-full sm:w-fit rounded-xl bg-neutral-50 shadow-inner border border-gray-200 p-1">
+    <div className={cn("flex justify-center flex-col items-center w-full", className)}>
+      <div className="relative z-10 flex flex-col sm:flex-row w-full sm:w-fit rounded-[1.25rem] sm:rounded-xl bg-neutral-50 shadow-inner border border-gray-200 p-1.5 sm:p-1 gap-1 sm:gap-0">
         <button
           onClick={() => handleSwitch(false)}
           className={cn(
-            "relative z-10 cursor-pointer h-11 sm:h-12 rounded-xl px-2 sm:px-8 py-1 sm:py-2 font-bold transition-colors text-[13px] sm:text-lg flex-1 whitespace-nowrap",
+            "relative z-10 cursor-pointer h-12 sm:h-12 rounded-xl px-4 sm:px-8 py-2 font-bold transition-colors text-[14px] sm:text-lg flex-1 flex items-center justify-center",
             !isKucukbas ? "text-white" : "text-gray-500 hover:text-gray-900"
           )}
         >
@@ -172,7 +172,7 @@ const AnimalSwitch = ({
         <button
           onClick={() => handleSwitch(true)}
           className={cn(
-            "relative z-10 cursor-pointer h-11 sm:h-12 flex-shrink-0 rounded-xl px-2 sm:px-8 py-1 sm:py-2 font-bold transition-colors text-[13px] sm:text-lg flex-1 whitespace-nowrap",
+            "relative z-10 cursor-pointer h-12 sm:h-12 rounded-xl px-4 sm:px-8 py-2 font-bold transition-colors text-[14px] sm:text-lg flex-1 flex items-center justify-center",
             isKucukbas ? "text-white" : "text-gray-500 hover:text-gray-900"
           )}
         >
@@ -200,19 +200,19 @@ const DeliverySwitch = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex justify-center w-full sm:w-auto", className)}>
-      <div className="relative z-10 flex flex-wrap w-full sm:w-fit rounded-xl bg-gray-100/60 p-1 border border-gray-200/80 items-center">
+    <div className={cn("flex justify-center flex-col items-center w-full", className)}>
+      <div className="relative z-10 flex flex-col sm:flex-row w-full sm:w-fit rounded-2xl sm:rounded-xl bg-gray-50 sm:bg-gray-100/60 p-1.5 sm:p-1 border border-gray-200/80 items-stretch sm:items-center gap-1 sm:gap-0">
         <button
           onClick={() => onChange(false)}
           className={cn(
-            "relative z-10 cursor-pointer sm:h-11 h-10 rounded-lg px-2 sm:px-5 py-1.5 font-bold transition-colors text-[12px] sm:text-sm flex-1 whitespace-nowrap",
+            "relative z-10 cursor-pointer sm:h-11 h-12 rounded-xl sm:rounded-lg px-3 sm:px-5 py-2 sm:py-1.5 font-bold transition-colors text-[13.5px] sm:text-sm flex-1 flex items-center justify-center break-words",
             !isExtra ? "text-gray-900" : "text-gray-500 hover:text-gray-700"
           )}
         >
           {!isExtra && (
             <motion.span
               layoutId="delivery-switch"
-              className="absolute top-0 left-0 sm:h-11 h-10 w-full rounded-lg shadow-sm bg-white border border-gray-200"
+              className="absolute top-0 left-0 h-12 sm:h-11 w-full rounded-xl sm:rounded-lg shadow-md sm:shadow-sm bg-white border border-gray-200"
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
             />
           )}
@@ -222,14 +222,14 @@ const DeliverySwitch = ({
         <button
           onClick={() => onChange(true)}
           className={cn(
-            "relative z-10 cursor-pointer sm:h-11 h-10 rounded-lg px-2 sm:px-5 py-1.5 font-bold transition-colors text-[12px] sm:text-sm flex-1 whitespace-nowrap",
+            "relative z-10 cursor-pointer sm:h-11 h-12 rounded-xl sm:rounded-lg px-3 sm:px-5 py-2 sm:py-1.5 font-bold transition-colors text-[13.5px] sm:text-sm flex-1 flex items-center justify-center break-words",
             isExtra ? "text-orange-700" : "text-gray-500 hover:text-gray-700"
           )}
         >
           {isExtra && (
             <motion.span
               layoutId="delivery-switch"
-              className="absolute top-0 left-0 sm:h-11 h-10 w-full rounded-lg shadow-sm bg-white border border-gray-200"
+              className="absolute top-0 left-0 h-12 sm:h-11 w-full rounded-xl sm:rounded-lg shadow-md sm:shadow-sm bg-white border border-gray-200"
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
             />
           )}
