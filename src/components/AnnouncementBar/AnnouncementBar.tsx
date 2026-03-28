@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function AnnouncementBar() {
   return (
-    <div className="w-full bg-[#1a2f24] text-[#d4c6b1] text-xs font-medium tracking-wide z-[100] relative border-b border-[#2d4a3a]">
+    <div className="w-full bg-[#1a2f24] text-[#d4c6b1] text-xs font-medium tracking-wide z-[50] relative border-b border-[#2d4a3a]">
       {/* ── DESKTOP & TABLET VIEW (md and up) ── */}
       <div className="hidden md:flex max-w-[85rem] mx-auto px-6 py-2 items-center justify-between">
         

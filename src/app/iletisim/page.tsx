@@ -19,14 +19,14 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function IletisimPage() {
   return (
-    <main className="min-h-screen bg-gray-50 flex flex-col overflow-hidden">
+    <main className="min-h-screen bg-gray-50 flex flex-col">
         
         {/* ── 1. CINEMATIC HERO SECTION ── */}
         <section className="relative w-full h-[60vh] min-h-[450px] flex items-center justify-center overflow-hidden">
           {/* Safe Real Photography Background */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 transform scale-105"
-            style={{ backgroundImage: "url('/banner_image/islamic_bull.png')" }} 
+            style={{ backgroundImage: "url('/banner_image/iletisim_hero.png')" }} 
           >
             {/* Deep gradient for white navbar and central title visibility */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/50 to-[#0c1a12]"></div>

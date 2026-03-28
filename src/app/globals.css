@@ -123,8 +123,6 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
-    width: 100%;
   }
 
   body {
@@ -133,8 +131,6 @@
     line-height: 1.6;
     color: var(--color-text);
     background-color: var(--color-background);
-    overflow-x: hidden;
-    width: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {

@@ -101,7 +101,7 @@ const faqs: FAQItem[] = [
 
 export default function FAQPage() {
   return (
-    <main className="min-h-screen bg-gray-50 flex flex-col overflow-hidden">
+    <main className="min-h-screen bg-gray-50 flex flex-col">
         
         {/* ── 1. CINEMATIC HERO SECTION ── */}
         <section className="relative w-full h-[65vh] min-h-[500px] flex items-center justify-center overflow-hidden">

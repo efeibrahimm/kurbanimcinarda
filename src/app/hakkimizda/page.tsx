@@ -22,14 +22,14 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function HakkimizdaPage() {
   return (
-    <main className="min-h-screen bg-white flex flex-col overflow-hidden">
+    <main className="min-h-screen bg-white flex flex-col">
       
       {/* ── 1. REAL PHOTOGRAPHY HERO (Doğal Çiftlik/Gündoğumu) ── */}
       <section className="relative w-full h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         {/* Real life farm/cattle photo from AI Generator guarantees Islamic safety */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 transform scale-105"
-          style={{ backgroundImage: "url('/banner_image/islamic_bull.png')" }} 
+          style={{ backgroundImage: "url('/banner_image/ofis.jpeg')" }} 
         >
           {/* Deep dark fade overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/90 z-0"></div>
@@ -53,7 +53,7 @@ export default function HakkimizdaPage() {
              className={`${outfit.className} text-[3rem] sm:text-5xl md:text-[5.5rem] font-extrabold tracking-tight text-white leading-[1.05] mb-6 drop-shadow-xl`}
            >
              Güven, Hijyen ve <br className="hidden md:block"/> 
-             <span className="text-orange-500">Yarım Asırlık</span> Tecrübe
+             <span className="text-orange-500">16 Yıllık</span> Tecrübe
            </motion.h1>
 
            <motion.p 

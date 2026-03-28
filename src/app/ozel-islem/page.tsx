@@ -26,7 +26,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function OzelIslemPage() {
   return (
-    <main className="min-h-screen bg-gray-50 flex flex-col overflow-hidden">
+    <main className="min-h-screen bg-gray-50 flex flex-col">
       
       {/* ── 1. CINEMATIC HERO SECTION (WITH VIDEO) ── */}
       <section className="relative w-full h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden">
@@ -145,7 +145,7 @@ export default function OzelIslemPage() {
             >
                {/* Kutucuk 1: Et Dinlendirme */}
                <div className="relative rounded-[2rem] p-8 sm:p-10 flex flex-col justify-between text-white aspect-square shadow-xl group hover:-translate-y-2 transition-transform overflow-hidden">
-                  <div className="absolute inset-0 bg-cover bg-center z-0 group-hover:scale-110 transition-transform duration-700" style={{ backgroundImage: "url('/banner_image/cinematic_hero.png')" }} />
+                  <div className="absolute inset-0 bg-cover bg-center z-0 group-hover:scale-110 transition-transform duration-700" style={{ backgroundImage: "url('/dinlenmis.jpg')" }} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-0" />
                   
                   <div className="p-4 bg-white/20 backdrop-blur-md w-fit rounded-2xl mb-8 relative z-10 border border-white/20">
@@ -159,7 +159,7 @@ export default function OzelIslemPage() {
 
                {/* Kutucuk 2: Kıyma & Kuşbaşı */}
                <div className="relative rounded-[2rem] p-8 sm:p-10 flex flex-col justify-between aspect-square group hover:-translate-y-2 transition-transform overflow-hidden shadow-xl">
-                  <div className="absolute inset-0 bg-cover bg-center z-0 group-hover:scale-110 transition-transform duration-700" style={{ backgroundImage: "url('/banner_image/islamic_bull.png')" }} />
+                  <div className="absolute inset-0 bg-cover bg-center z-0 group-hover:scale-110 transition-transform duration-700" style={{ backgroundImage: "url('/hijyen.jpg')" }} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-[#0c1a12]/50 z-0" />
                   
                   <div className="p-4 bg-orange-500 text-white w-fit rounded-2xl mb-8 relative z-10 border border-white/10">

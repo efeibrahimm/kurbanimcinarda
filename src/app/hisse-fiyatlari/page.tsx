@@ -20,7 +20,7 @@ export default function HisseFiyatlariPage() {
         {/* Dark Background Overlay Image (8K Cinematic AI Gen) */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 transform scale-105"
-          style={{ backgroundImage: "url('/banner_image/cinematic_hero.png')" }}
+          style={{ backgroundImage: "url('/banner_image/islamic_ram.png')" }}
         >
           {/* Heavy gradient bottom to top to ensure navbar logo and hero text are perfectly visible */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/95"></div>

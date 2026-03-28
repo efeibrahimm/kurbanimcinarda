@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Inter } from "next/font/google";
-import { MessageCircle, Phone, Instagram } from "lucide-react";
+import { MessageCircle, Phone } from "lucide-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,115 +21,126 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0c1a12] text-white pt-20 pb-10 border-t border-gray-800">
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
-          
-          {/* Brand & Social (5 cols) */}
-          <div className="lg:col-span-5 flex flex-col items-start gap-6">
-            <Link href="/" className="inline-block">
-              <img
-                src="/logo_white.png"
-                alt="Çınar Kurban"
-                className="h-10 sm:h-12 w-auto object-contain"
-              />
-            </Link>
-            <p className={`${inter.className} text-gray-400 text-[15px] leading-relaxed max-w-sm`}>
-              16 yıllık tecrübe ile İstanbul'da İslami usullere uygun kurbanlık
-              satış, kesim ve teslimat hizmeti sunuyoruz. Her zaman güven, daima hijyen.
-            </p>
-            <div className="flex items-center gap-4 mt-2">
-              <a
-                href="https://wa.me/902129099495"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500 hover:border-orange-500 transition-colors"
-                aria-label="WhatsApp"
-              >
-                <MessageCircle size={18} />
-              </a>
-              <a
-                href="tel:+902129099495"
-                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500 hover:border-orange-500 transition-colors"
-                aria-label="Telefon"
-              >
-                <Phone size={18} />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500 hover:border-orange-500 transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram size={18} />
-              </a>
-            </div>
-          </div>
+    <footer className="relative">
 
-          {/* Quick Links (2+ Cols) */}
-          <div className="lg:col-span-2 lg:col-start-7">
-            <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Hızlı Linkler</h4>
-            <ul className={`${inter.className} text-gray-400 text-sm space-y-3`}>
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="hover:text-orange-400 transition-colors">{link.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+      {/* ── TOP GRADIENT TRANSITION (page bg → dark green fade) ── */}
+      <div className="h-8 bg-gradient-to-b from-gray-50 to-[#0c1a12]" />
 
-          {/* Company (2 Cols) */}
-          <div className="lg:col-span-2 lg:col-start-9">
-            <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Kurumsal</h4>
-            <ul className={`${inter.className} text-gray-400 text-sm space-y-3`}>
-              {companyLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="hover:text-orange-400 transition-colors">{link.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+      {/* ── MAIN FOOTER CONTENT ── */}
+      <div className="bg-[#0c1a12] pt-16 pb-10">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-12 gap-y-10 gap-x-4 sm:gap-12 lg:gap-8 mb-16">
 
-          {/* Contact (2 Cols) */}
-          <div className="lg:col-span-2 lg:col-start-11">
-            <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">İletişim</h4>
-            <ul className={`${inter.className} text-gray-400 text-sm space-y-3`}>
-              <li>
-                <a href="tel:+902129099495" className="hover:text-orange-400 transition-colors">0 212 909 94 95</a>
-              </li>
-              <li>
-                <a href="mailto:info@cinarkurban.com" className="hover:text-orange-400 transition-colors">
-                  info@cinarkurban.com
-                </a>
-              </li>
-              <li>
+            {/* Brand & Social (5 cols) */}
+            <div className="col-span-3 sm:col-span-2 lg:col-span-5 flex flex-col items-start gap-6">
+              <Link href="/" className="inline-block">
+                <img
+                  src="/logo_white.png"
+                  alt="Çınar Kurban"
+                  className="h-10 sm:h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                />
+              </Link>
+              <p className={`${inter.className} text-[#d4c6b1] text-[15px] leading-relaxed max-w-sm font-medium`}>
+                16 yıllık tecrübe ile İstanbul'da İslami usullere uygun kurbanlık
+                satış, kesim ve teslimat hizmeti sunuyoruz. Her zaman güven, daima hijyen.
+              </p>
+              <div className="flex items-center gap-4 mt-2">
                 <a
                   href="https://wa.me/902129099495"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-orange-400 transition-colors"
+                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:border-[#d4c6b1] hover:text-[#d4c6b1] transition-colors"
+                  aria-label="WhatsApp"
                 >
-                  İstanbul, Türkiye
+                  <MessageCircle size={18} />
                 </a>
-              </li>
-            </ul>
+                <a
+                  href="tel:+902129099495"
+                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:border-[#d4c6b1] hover:text-[#d4c6b1] transition-colors"
+                  aria-label="Telefon"
+                >
+                  <Phone size={18} />
+                </a>
+                <a
+                  href="https://www.instagram.com/kurbanimcinarda"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:border-[#d4c6b1] hover:text-[#d4c6b1] transition-colors"
+                  aria-label="Instagram"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div className="col-span-1 sm:col-span-1 lg:col-span-2 lg:col-start-7">
+              <h4 className="text-[#d4c6b1] font-bold mb-4 uppercase tracking-wider text-[13px]">Hızlı Linkler</h4>
+              <ul className={`${inter.className} font-medium text-[14px] space-y-3`}>
+                {quickLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-white hover:text-[#d4c6b1] transition-colors">{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Company */}
+            <div className="col-span-1 sm:col-span-1 lg:col-span-2 lg:col-start-9">
+              <h4 className="text-[#d4c6b1] font-bold mb-4 uppercase tracking-wider text-[13px]">Kurumsal</h4>
+              <ul className={`${inter.className} font-medium text-[14px] space-y-3`}>
+                {companyLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-white hover:text-[#d4c6b1] transition-colors">{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div className="col-span-1 sm:col-span-2 lg:col-span-3 lg:col-start-11">
+              <h4 className="text-[#d4c6b1] font-bold mb-4 uppercase tracking-wider text-[13px]">İletişim</h4>
+              <ul className={`${inter.className} font-medium text-[14px] space-y-3`}>
+                <li>
+                  <a href="tel:+902129099495" className="text-white hover:text-[#d4c6b1] transition-colors">0 212 909 94 95</a>
+                </li>
+                <li>
+                  <a href="mailto:info@cinarkurban.com" className="text-white hover:text-[#d4c6b1] transition-colors">
+                    info@cinarkurban.com
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://wa.me/902129099495"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-[#d4c6b1] transition-colors"
+                  >
+                    İstanbul, Türkiye
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-white/10 pt-8 flex flex-col items-center justify-center text-center">
+            <p className={`${inter.className} text-white text-xs font-medium`}>
+              © {currentYear} Çınar Kurban — Çınar İstanbul. Tüm hakları saklıdır.
+            </p>
+            <p className={`${inter.className} text-white text-[11px] mt-2 font-medium `}>
+              <a href="https://morekod.com/" target="_blank" rel="noopener noreferrer" className="text-white hover:opacity-80 transition-opacity underline decoration-white/30 underline-offset-2">
+                MoreKod
+              </a> tarafından geliştirildi.
+            </p>
           </div>
 
         </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col items-center justify-center text-center">
-          <p className={`${inter.className} text-gray-500 text-sm`}>
-            © {currentYear} Çınar Kurban — Çınar İstanbul. Tüm hakları saklıdır.
-          </p>
-          <p className={`${inter.className} text-gray-600 text-xs mt-2 font-medium`}>
-            <a href="https://morekod.com/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition-colors underline decoration-gray-700 underline-offset-2">
-              MoreKod
-            </a> tarafından geliştirildi.
-          </p>
-        </div>
-        
       </div>
     </footer>
   );

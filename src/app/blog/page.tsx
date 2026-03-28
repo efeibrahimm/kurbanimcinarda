@@ -15,7 +15,7 @@ export default function BlogPage() {
   const otherPosts = blogPosts.slice(1);
 
   return (
-    <main className="min-h-screen bg-gray-50 flex flex-col overflow-hidden">
+    <main className="min-h-screen bg-gray-50 flex flex-col">
         
         {/* ── 1. CINEMATIC HERO SECTION ── */}
         <section className="relative w-full h-[65vh] min-h-[450px] flex items-center justify-center overflow-hidden">
