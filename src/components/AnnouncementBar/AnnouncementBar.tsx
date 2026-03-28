@@ -39,30 +39,8 @@ export default function AnnouncementBar() {
       </div>
 
       {/* ── MOBILE VIEW (below md) ── */}
-      <div className="md:hidden flex flex-col items-center justify-center py-2 gap-1.5 text-[10px] max-w-full px-4">
-        {/* Top Mobile Row: IG + Phone + Location */}
-        <div className="flex w-full items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Link 
-              href="https://www.instagram.com/kurbanimcinarda" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white" 
-            >
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            </Link>
-            <a href="tel:+902129099495" className="flex items-center gap-1 text-white">
-              <Phone size={9} />
-              <span>0212 909 94 95</span>
-            </a>
-          </div>
-          <div className="flex items-center gap-1 opacity-90">
-            <MapPin size={9} />
-            <span>Bağcılar / İstanbul</span>
-          </div>
-        </div>
-        {/* Bottom Mobile Row: Trust Badge */}
-        <div className="uppercase font-bold tracking-[0.14em] opacity-80 text-[8.5px] w-full text-center border-t border-[#2d4a3a]/50 pt-1.5 mt-0.5">
+      <div className="md:hidden flex items-center justify-center py-2 px-4">
+        <div className="uppercase font-bold tracking-[0.15em] opacity-90 text-[10px] text-center w-full">
           16 YILLIK DENEYİM • ERKEN KAYIT FIRSATI
         </div>
       </div>
