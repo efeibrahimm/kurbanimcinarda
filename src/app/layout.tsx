@@ -63,7 +63,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr" data-scroll-behavior="smooth">
-      <body className={`${inter.variable} ${outfit.variable}`} suppressHydrationWarning>
+      <body className={`${inter.variable} ${outfit.variable} overflow-x-hidden`} suppressHydrationWarning>
         <AnnouncementBar />
         <Navbar />
         {children}
