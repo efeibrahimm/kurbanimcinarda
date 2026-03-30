@@ -18,8 +18,15 @@ export default function RandevuAlPage() {
     note: ""
   });
 
+  const isKucukbas = formData.hisseType.startsWith("Küçükbaş");
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const updated = { ...formData, [e.target.name]: e.target.value };
+    // Küçükbaş seçilince teslimat seçeneğini sıfırla
+    if (e.target.name === "hisseType" && e.target.value.startsWith("Küçükbaş")) {
+      updated.deliveryDay = "";
+    }
+    setFormData(updated);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -176,9 +183,10 @@ export default function RandevuAlPage() {
                   <label className="text-sm font-bold text-gray-700">Teslimat / Kesim Günü</label>
                   <select name="deliveryDay" required className="p-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:bg-white transition-all font-medium appearance-none" value={formData.deliveryDay} onChange={handleChange}>
                     <option value="" disabled>Gününüzü seçin...</option>
-                    <option value="1. Gün">1. Gün Geleneksel (Sıcak Et) Kesimi</option>
-                    <option value="2. Gün">2. Gün Kesimi ve Teslimatı</option>
-                    <option value="3. Gün">3. Gün Kesimi ve Teslimatı</option>
+                    <option value="1. Gün Geleneksel Teslimat">1. Gün Geleneksel Teslimat</option>
+                    {!isKucukbas && (
+                      <option value="5. Gün Özel Teslimat">5. Gün Özel Teslimat</option>
+                    )}
                   </select>
                 </div>
 
