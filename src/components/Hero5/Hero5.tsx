@@ -90,7 +90,7 @@ export default function Hero5() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className={`${inter.className} mt-6 sm:mt-8 text-lg sm:text-xl text-gray-200 font-medium leading-relaxed max-w-2xl drop-shadow`}
         >
-          2026 kurban kayıtlarımız başlamıştır. Modern tesislerimizde, profesyonel hizmetle kurban ibadetinizi güvenle yerine getirin.
+          2026 kurban kayıtlarımız başlamıştır. Modern tesisimizde, profesyonel hizmetle kurban ibadetinizi güvenle yerine getirin.
         </motion.p>
 
         {/* Buttons */}
