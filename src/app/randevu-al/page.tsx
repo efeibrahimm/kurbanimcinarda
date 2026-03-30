@@ -22,10 +22,17 @@ export default function RandevuAlPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Construct WhatsApp Message
+    // Email gönder
+    fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    }).catch(() => {});
+
+    // WhatsApp'a yönlendir
     const text = `Merhaba, 2026 Kurban Kesim Ön Kayıt / Randevu talebim var:
 *Ad Soyad:* ${formData.name}
 *Telefon:* ${formData.phone}

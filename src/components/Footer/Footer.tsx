@@ -109,8 +109,8 @@ export default function Footer() {
                   <a href="tel:+902129099495" className="text-white hover:text-[#d4c6b1] transition-colors">0 212 909 94 95</a>
                 </li>
                 <li>
-                  <a href="mailto:info@cinarkurban.com" className="text-white hover:text-[#d4c6b1] transition-colors">
-                    info@cinarkurban.com
+                  <a href="mailto:cinarkurban@gmail.com" className="text-white hover:text-[#d4c6b1] transition-colors">
+                    cinarkurban@gmail.com
                   </a>
                 </li>
                 <li>

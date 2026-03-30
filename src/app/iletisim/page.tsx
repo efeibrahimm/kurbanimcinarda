@@ -122,7 +122,7 @@ export default function IletisimPage() {
                     </div>
                     <div>
                       <h3 className={`${outfit.className} text-lg font-bold text-gray-900`}>E-Posta Adresi</h3>
-                      <a href="mailto:info@cinarkurban.com" className={`${inter.className} text-blue-600 font-bold block mt-1 hover:underline`}>info@cinarkurban.com</a>
+                      <a href="mailto:cinarkurban@gmail.com" className={`${inter.className} text-blue-600 font-bold block mt-1 hover:underline`}>cinarkurban@gmail.com</a>
                     </div>
                   </div>
 
