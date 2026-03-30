@@ -241,7 +241,7 @@ export default function OzelIslemPage() {
                     <div className="p-3 bg-white/10 rounded-xl"><Truck size={24} className="text-orange-400" /></div>
                     <h3 className={`${outfit.className} text-2xl font-bold text-white`}>Teslimat Süreci</h3>
                   </div>
-                  <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Özel kasaplık hizmeti için dinlendirilmesi gereken karkas etin işlenmesi bir zaman gerektirir. Bu sebeple teslimatlar ortalama <strong className="text-white">Bayramın 3. veya 4. Günü</strong> gerçekleşmektedir.</p>
+                  <p className="text-gray-400 text-[15px] leading-relaxed mb-6">Özel kasaplık hizmeti için dinlendirilmesi gereken karkas etin işlenmesi bir zaman gerektirir. Bu sebeple teslimatlar <strong className="text-white">5. Gün Özel Teslim</strong> kapsamında gerçekleşmektedir.</p>
                 </div>
 
                 <div className="mt-8 p-5 bg-white/5 border border-white/10 rounded-2xl">
@@ -262,8 +262,8 @@ export default function OzelIslemPage() {
                 </div>
                 
                 <div className="mt-8 flex gap-3">
-                  <span className="px-4 py-2 bg-white rounded-full text-xs font-bold text-gray-500 uppercase tracking-widest border border-gray-200 shadow-sm">Büyükbaş Ayrı</span>
-                  <span className="px-4 py-2 bg-white rounded-full text-xs font-bold text-gray-500 uppercase tracking-widest border border-gray-200 shadow-sm">Özel Seçim Ayrı</span>
+                  <span className="px-4 py-2 bg-white rounded-full text-xs font-bold text-gray-500 uppercase tracking-widest border border-gray-200 shadow-sm">Hisseye Özel Paket</span>
+                  <span className="px-4 py-2 bg-white rounded-full text-xs font-bold text-gray-500 uppercase tracking-widest border border-gray-200 shadow-sm">Gıda Onaylı</span>
                 </div>
              </div>
 
