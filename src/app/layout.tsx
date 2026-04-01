@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.cinarkurban.com/logo.png",
+        url: "https://www.cinarkurban.com/logos/cinarlogonew.png",
         width: 1200,
         height: 1200,
         alt: "Çınar Kurban",
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: "/logo_white.png",
-    apple: "/logo_white.png",
+    icon: "/logos/cinarlogonew.png",
+    apple: "/logos/cinarlogonew.png",
   },
 };
 
