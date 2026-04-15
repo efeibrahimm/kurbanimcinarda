@@ -25,7 +25,7 @@ export default function Hero5() {
           alt="Çınar Kurban Tesisleri"
           fill
           priority
-          className="object-cover object-[85%_top] sm:object-center transition-all duration-700"
+          className="object-cover object-[85%_top] sm:object-cover sm:object-[75%_top] transition-all duration-700"
         />
         {/* Soft fade-out for bottom edge of image on mobile */}
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0c1a12] to-transparent sm:hidden z-10" />
